@@ -24,6 +24,9 @@
 
 
 </header>
+
+<div class="content" id="content"> </div>
+
 <section class=contact-session>
     <h2 class="contact">საკონტაკტო ინფორმაცია</h2>
     <ul>
@@ -53,5 +56,17 @@
     </a>
 </footer>
 
+
+<script>
+    let element = document.createElement('h1');
+    element.style.color = "green";
+    element.style.fontSize = "14px";
+    element.style.fontFamily = "Arial, Helvetica, sans-serif";
+    element.style.fontWeight = "normal";
+    element.style.margin = "100px";
+    element.innerText = "H1 Created from javascript";
+    document.getElementById("content").appendChild(element);
+
+</script>
 </body>
 </html>
