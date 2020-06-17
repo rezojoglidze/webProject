@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* Design start*/
 #gradation {
     left: 0;
     top: 0;
@@ -35,10 +36,7 @@ li a:hover { transform: scale(1.1); }
     margin: 25px;
 }
 
-
-
-
-
+/* Design End*/
 
 
 .header{
@@ -110,12 +108,6 @@ a:hover{
     border-left-width:1px;
     display:inline-block;
     padding-left: 35px;
-
-
-
-
-
-
 }
 /* end-footer */
 /* articles-block-start */
@@ -168,11 +160,9 @@ a:hover{
 
 /* fonts start */
 
-.Nino-Mtavruli{
-    font-family: "BPG Nino Mtavruli Bold", sans-serif;
+.Rezo-Mtavruli{
+    /*font-family: "BPG Nino Mtavruli Bold", sans-serif;*/
     font-size:22px;
-
-
 }
 
 .hell{
