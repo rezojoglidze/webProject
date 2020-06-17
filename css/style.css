@@ -1,0 +1,441 @@
+@charset "UTF-8";
+
+#gradation {
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(to right, rgba(0,0,255,0.3), rgba(0,255,0,0.3), rgba(255,0,0,0.3));
+}
+
+li a:hover { transform: scale(1.1); }
+
+#footer {
+    height: 700px;
+    width: 100%;
+    display: inline-block;
+    background-size: 210px;
+    background-position: center;
+}
+
+#designHeader {
+    height: 500px;
+    width: 100%;
+    display: inline-block;
+}
+
+#design_h1 {
+    margin: 28px;
+    word-spacing: 8px;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: "times new Bangladesh", Times, serif;
+}
+
+
+#designPrintBtn {
+    margin: 25px;
+}
+
+
+
+
+
+
+
+.header{
+    padding-top:30px;
+    padding-left:30px;
+
+}
+/* Banner */
+.head-banner{
+    width:100px;
+    /* padding-left:30px; */
+}
+
+.banner{
+    padding-top: 20px;
+    /* padding-left:30px; */
+}
+.banner-s{
+    margin-top: 30px;
+    padding-left:30px;
+    padding-right:166px;
+}
+/* end banner */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top:30px;
+
+}
+
+li {
+
+    margin-bottom: 7.5px
+
+}
+
+a{
+    text-decoration:none;
+    color: #3D58A6;
+
+
+}
+a li{
+    color: #3D58A6;
+}
+a:hover{
+    color: #EE4036
+}
+
+/* footer */
+.social{
+    padding-left:30px;
+    padding-top: 30px;
+}
+.social-fb{
+    height: 30px;
+    width:15px;
+    margin-right: 35px;
+
+
+}
+.social-yt{
+
+    height: 30px;
+    border-left-color:#3D58A6;
+    border-left-style:solid;
+    border-left-width:1px;
+    display:inline-block;
+    padding-left: 35px;
+
+
+
+
+
+
+}
+/* end-footer */
+/* articles-block-start */
+.articles-block{
+    padding-left:30px;
+}
+.article{
+    margin-top:40px;
+}
+.date-block{
+    background:#3D58A6;
+    display:inline-block;
+    font-size:48px;
+    color: white;
+    padding:5px;
+}
+.month{
+    color:#3D58A6;
+    font-size:26px;
+    margin:10px auto;
+}
+.article-title{
+    font-size:28px;
+    margin:15px auto 20px auto ;
+}
+.img-size{
+    width:250px;
+    margin-bottom:40px;
+}
+
+.text p {
+    padding-bottom:25px;
+    font-family: "BPG Ingiri Arial", sans-serif;
+    font-size:18px;
+
+}
+.text p:last-child{
+    padding-bottom:0;
+}
+/* articles-block-end */
+/* contact page start */
+
+.contact-session{
+    text-align: center;
+    margin-top:300px;
+    margin-bottom: 300px;
+}
+
+/* contact page end */
+
+/* fonts start */
+
+.Nino-Mtavruli{
+    font-family: "BPG Nino Mtavruli Bold", sans-serif;
+    font-size:22px;
+
+
+}
+
+.hell{
+    color: #3D58A6
+}
+/* fonts end */
+
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+*{
+    padding: 0;
+}
+body{
+    margin: 0 auto;
+}
+
+
+.header-content{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    margin:0 auto;
+    width:70%;
+    justify-content: space-between;
+}
+
+.logo > img{
+    margin-top: 5%;
+}
+
+.menu{
+    color: white;
+
+}
+.menu ul {
+    padding-left: 0px ;
+}
+.menu ul li {
+    list-style: none;
+    text-align: left;
+
+}
+.menu > ul > li > a{
+    text-decoration: none;
+    color: white;
+}
+.menu > ul > li > a:hover{
+    border-bottom: solid 1px white;
+}
+
+.menu > ul > li > a:active{
+
+}
+.icon{
+    width: 15px;
+
+
+}
+.icon2{
+    width: 15px;
+    display: inline;
+}
+.post{
+    height: 400px;
+    display: flex;
+}
+
+.posts{
+    flex-grow: 4;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.posts > div{
+    display: flex;
+    margin: 20px;
+    height: 120px;
+    margin-left: 0;
+
+}
+.box{
+    border: solid 5px #1abc9c;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.main{
+    flex-grow: 6;
+}
+.content{
+    width: 70%;
+    display: flex;
+    float: center;
+    margin: 0 auto;
+
+}
+.footer{
+    background-color: #565450;
+    height: 100px;
+
+}
+.footer-content{
+    margin:0 auto;
+
+    width:70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.footer-content > ul{
+    display: flex;
+
+
+}
+.footer-content > ul > li {
+
+    list-style: none;
+    text-align: center;
+    float: center;
+
+}
+.footer-content > ul > li > a{
+    text-decoration: none;
+    color: white;
+
+}
+p {
+    color:gray;
+}
+h3{
+    color: gray;
+}
+h1{
+    color: #CEC6C6;
+    font-size: 50px;
+}
+h2{
+    color: white;
+}
+.black-gradient{
+    height: 15px;
+    background-image: linear-gradient(to right, black ,gray, black);
+}
+.gray-gradient{
+    height: 15px;
+    background-image: linear-gradient(to right, #565450,white, #565450);
+
+}
+.arrow-right {
+    display: none;
+    width: 3px;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+
+    border-left: 8px solid #1abc9c;
+}
+.arrow-right.active{
+    display: block;
+    width: 3px;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+
+    border-left: 8px solid #1abc9c;
+}
+.drop-btn{
+    display: none;
+    color: #1abc9c;
+}
+@media screen and (max-width: 1165px){
+    .content{
+        flex-direction: column;
+    }
+    .main{
+        height: 500px;
+    }
+    h1{
+        text-align: center;
+    }
+    .gray-gradient{
+        margin-top: 400px;
+    }
+
+}
+@media screen and (max-width: 992px){
+    .box{
+        height: 100px;
+    }
+    .footer-content{
+        width: 100%;
+    }
+    .drop-btn{
+        display: inline;
+        margin-top: 20px;
+    }
+
+    .menu > ul{
+        display: none;
+    }
+
+    .menu > ul > li{
+        width: 100%;
+    }
+    .menu > ul > li > a{
+        font-size: 20px;
+    }
+    .menu > ul.active{
+        display: block;
+        background: #1abc9c;
+        margin-top: 10;
+        position: absolute;
+        border-radius: 5px;
+
+    }
+}
