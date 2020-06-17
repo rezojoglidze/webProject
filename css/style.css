@@ -9,9 +9,10 @@
 
 li a:hover { transform: scale(1.1); }
 
-#footer {
+#designFooter {
     height: 700px;
     width: 100%;
+    font-size: 17px;
     display: inline-block;
     background-size: 210px;
     background-position: center;
@@ -35,8 +36,9 @@ li a:hover { transform: scale(1.1); }
 #designPrintBtn {
     margin: 25px;
 }
-
 /* Design End*/
+
+
 
 
 .header{
@@ -89,9 +91,10 @@ a:hover{
 }
 
 /* footer */
-.social{
+.newsSocial{
     padding-left:30px;
     padding-top: 30px;
+    padding-bottom: 20px;
 }
 .social-fb{
     height: 30px;
@@ -357,9 +360,9 @@ h2{
     background-image: linear-gradient(to right, black ,gray, black);
 }
 .gray-gradient{
-    height: 15px;
+    margin-top: 16px;
+    height: 10px;
     background-image: linear-gradient(to right, #565450,white, #565450);
-
 }
 .arrow-right {
     display: none;
@@ -378,54 +381,4 @@ h2{
     border-bottom: 8px solid transparent;
 
     border-left: 8px solid #1abc9c;
-}
-.drop-btn{
-    display: none;
-    color: #1abc9c;
-}
-@media screen and (max-width: 1165px){
-    .content{
-        flex-direction: column;
-    }
-    .main{
-        height: 500px;
-    }
-    h1{
-        text-align: center;
-    }
-    .gray-gradient{
-        margin-top: 400px;
-    }
-
-}
-@media screen and (max-width: 992px){
-    .box{
-        height: 100px;
-    }
-    .footer-content{
-        width: 100%;
-    }
-    .drop-btn{
-        display: inline;
-        margin-top: 20px;
-    }
-
-    .menu > ul{
-        display: none;
-    }
-
-    .menu > ul > li{
-        width: 100%;
-    }
-    .menu > ul > li > a{
-        font-size: 20px;
-    }
-    .menu > ul.active{
-        display: block;
-        background: #1abc9c;
-        margin-top: 10;
-        position: absolute;
-        border-radius: 5px;
-
-    }
 }
