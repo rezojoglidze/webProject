@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="img/address.svg" />
     <meta name="author" content="რეზო ჯოგლიძე">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 
-<body id ="gradation">
+<body>
 <header class="header">
     <a class= banner href="index.html">
         <img class="head-banner" src="img/head-banner.svg" alt="head-banner is missing">
@@ -20,16 +21,24 @@
             <li class=Rezo-Mtavruli class="hell"><a href="news.html">სიახლეები</a></li>
             <li class=Rezo-Mtavruli class="hell"><a href="about.html">კონტაქტი</a></li>
             <li class=Rezo-Mtavruli class="hell"><a href="pantrionCompany.html">პანტრიონი კომპანია</a></li>
-            <li class=Rezo-Mtavruli class="hell"><a href="design.html">დიზაინი</a></li>
+            <li class=Rezo-Mtavruli class="hell"><a href="design.html">მაგალითები</a></li>
 
         </ul>
     </nav>
 </header>
 
 <div id="designHeader">
+    <h1 id = "design_h1">მაგალითები</h1>
+</div>
 
-    <h1 id = "design_h1">დიზაინის გვერდი</h1>
-    <img alt="Web დეველოპერი" usemap="#workmap" width="400" height="379">
+<div>
+    <button id ="designPrintBtn"onclick="myFunction()">Print Btn with JS</button>
+    <p class="design-p">design animation</p>
+    <div class = "design-animation"></div>
+    <p class="design-p">The transition Property</p>
+    <div class = "design-transition" id = "design-transition"></div>
+    <p class="design-p">Design transform </p>
+    <div class = "design-transform"> <p class="design-p">design-transform</p> </div>
 
     <map name="workmap">
         <area shape="rect" coords="30,45,260,340" alt="Computer" href="#">
@@ -37,20 +46,22 @@
         <area shape="circle" coords="339,305,35" alt="note" href="#">
     </map>
 
-    <button id ="designPrintBtn"onclick="myFunction()">Print Btn with JS</button>
-    <script>
-        function myFunction() {
-            alert("print is avaliable");
-        }
-    </script>
 </div>
 
 <div id="designFooter">
+    <p class="design-p">gradation</p>
+    <div id ="gradation">
     <p>Lorem Ipsum საბეჭდი და ტიპოგრაფიული ინდუსტრიის უშინაარსო ტექსტია. იგი სტანდარტად 1500-იანი წლებიდან იქცა, როდესაც უცნობმა მბეჭდავმა ამწყობ დაზგაზე წიგნის საცდელი ეგზემპლარი დაბეჭდა. მისი ტექსტი არამარტო 5 საუკუნის მანძილზე შემორჩა, არამედ მან დღემდე, ელექტრონული ტიპოგრაფიის დრომდეც უცვლელად მოაღწია. განსაკუთრებული პოპულარობა მას 1960-იან წლებში გამოსულმა Letraset-ის ცნობილმა ტრაფარეტებმა მოუტანა, უფრო მოგვიანებით კი — Aldus PageMaker-ის ტიპის საგამომცემლო პროგრამებმა, რომლებშიც Lorem Ipsum-ის სხვადასხვა ვერსიები იყო ჩაშენებული.</p>
     <p>ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს. Lorem Ipsum-ის გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია. დღეს უამრავი პერსონალური საგამომცემლო პროგრამა და ვებგვერდი იყენებს Lorem Ipsum-ს, როგორც დროებით ტექსტს წყობის შესავსებად; Lorem Ipsum-ის მოძებნისას კი საძიებო სისტემები ბევრ დაუსრულებელ გვერდს გვიჩვენებენ. წლების მანძილზე ამ ტექსტის უამრავი ვერსია გამოჩნდა, ზოგი შემთხვევით დაშვებული შეცდომის გამო, ზოგი კი — განზრახ, ხუმრობით.</p>
     <p>დღეს უკვე Lorem Ipsum-პასაჟის უამრავი ვერსია არსებობს. მათი დიდი ნაწილი ხუმრობით არის შეცვლილი, ბევრი კი უბრალოდ სიტყვების შემთხვევითი გენერირებით დაიწერა. ინტერნეტში არსებული გენერატორები, როგორც წესი, წინასწარ განსაზღვრული ტექსტის ნაგლეჯს იმეორებენ ხოლმე, ამიტომ ეს პირველი ნამდვილი გენერატორია. იგი რთული და მართებული სტრუქტურის წინადადებების ასაწყობად 200-მდე ლათინური სიტყვისგან შემდგარ ლექსიკონს იყენებს. შედეგად მიიღება ტექსტი, რომელიც ვიზუალურად მაქსიმალურად ახლოსაა რეალურთან. გენერირებული Lorem Ipsum არასოდეს არ არის გამეორებადი, შემთხვევითი სიტყვების ან ხუმრობების შემცველი</p>
     <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
 </div>
+</div>
 
+<script>
+    function myFunction() {
+        alert("print Btn Tapped");
+    }
+</script>
 </body>
 </html>

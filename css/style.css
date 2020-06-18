@@ -1,4 +1,22 @@
 @charset "UTF-8";
+/* fonts start */
+
+.Rezo-Mtavruli{
+    /*font-family: "BPG Nino Mtavruli Bold", sans-serif;*/
+    font-size:22px;
+}
+/* fonts end */
+
+.hell{
+    color: #3D58A6;
+}
+
+
+.index-page-main-photo{
+    box-shadow: rgba(0, 0, 0, 0.75) 10px 10px 5px 0px;
+}
+
+
 
 /* Design start*/
 #gradation {
@@ -10,16 +28,17 @@
 li a:hover { transform: scale(1.1); }
 
 #designFooter {
-    height: 700px;
+    height: 900px;
     width: 100%;
-    font-size: 17px;
+    font-size: 19px;
     display: inline-block;
+    margin-top: 100px;
     background-size: 210px;
     background-position: center;
 }
 
 #designHeader {
-    height: 500px;
+    height: 100px;
     width: 100%;
     display: inline-block;
 }
@@ -32,15 +51,60 @@ li a:hover { transform: scale(1.1); }
     font-family: "times new Bangladesh", Times, serif;
 }
 
+.design-p {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
 
 #designPrintBtn {
     margin: 25px;
 }
+
+.design-animation{
+    width: 700px;
+    height: 100px;
+    background-color: rgba(0,0,255,0.3);
+    animation-name: design-animation;
+    animation-duration: 30s;
+}
+
+@keyframes design-animation {
+    from {background-color: rgba(0,0,255,0.3);}
+    to {background-color: red;}
+}
+
+.design-transition {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 10s;
+}
+
+#design-transition {transition-timing-function: linear;}
+
+.design-transition:hover {
+    width: 700px;
+}
+
+.design-transform{
+    width: 500px;
+    height: 100px;
+    background-color: rgba(0,0,255,0.3);
+    -ms-transform: rotate(5deg); /* IE 9 */
+    transform: rotate(5deg);
+    -ms-transform: skewY(5deg); /* IE 9 */
+    transform: skewY(5deg);
+}
+
 /* Design End*/
 
 
 
 
+
+
+/* about, index, new page start */
 .header{
     padding-top:30px;
     padding-left:30px;
@@ -48,8 +112,7 @@ li a:hover { transform: scale(1.1); }
 }
 /* Banner */
 .head-banner{
-    width:100px;
-    /* padding-left:30px; */
+    width:200px;
 }
 
 .banner{
@@ -91,20 +154,19 @@ a:hover{
 }
 
 /* footer */
-.newsSocial{
+.socialIcons{
     padding-left:30px;
     padding-top: 30px;
     padding-bottom: 20px;
 }
+
 .social-fb{
     height: 30px;
     width:15px;
     margin-right: 35px;
-
-
 }
-.social-yt{
 
+.social-yt{
     height: 30px;
     border-left-color:#3D58A6;
     border-left-style:solid;
@@ -126,6 +188,7 @@ a:hover{
     font-size:48px;
     color: white;
     padding:5px;
+    box-shadow: rgba(0, 0, 0, 0.75) 10px 10px 5px 0px;
 }
 .month{
     color:#3D58A6;
@@ -139,6 +202,7 @@ a:hover{
 .img-size{
     width:250px;
     margin-bottom:40px;
+    box-shadow: rgba(0, 0, 0, 0.75) 10px 10px 5px 0px;
 }
 
 .text p {
@@ -151,27 +215,26 @@ a:hover{
     padding-bottom:0;
 }
 /* articles-block-end */
+
+
+
 /* contact page start */
 
 .contact-session{
     text-align: center;
-    margin-top:300px;
-    margin-bottom: 300px;
+    margin-top:100px;
+    margin-bottom: 20px;
 }
 
 /* contact page end */
 
-/* fonts start */
+/* about, index, new page End */
 
-.Rezo-Mtavruli{
-    /*font-family: "BPG Nino Mtavruli Bold", sans-serif;*/
-    font-size:22px;
-}
 
-.hell{
-    color: #3D58A6
-}
-/* fonts end */
+
+
+
+
 
 
 
@@ -230,7 +293,16 @@ table {
 body{
     margin: 0 auto;
 }
-
+.transform-exmpl {
+    margin-top: 30px;
+    margin-bottom:30px;
+    width: 400px;
+    height: 80px;
+    background-color: yellow;
+    -ms-transform: skewY(10deg); /* IE 9 */
+    transform: skewY(5deg);
+    background-image: linear-gradient(to right, gray ,black, gray);
+}
 
 .header-content{
     display: flex;
@@ -241,8 +313,10 @@ body{
     justify-content: space-between;
 }
 
-.logo > img{
-    margin-top: 5%;
+.pantrion-logo > img{
+    margin-top: 5px;
+    margin-bottom: 30px;
+    transform: rotate(3grad);
 }
 
 .menu{
@@ -296,19 +370,19 @@ body{
     margin-left: 0;
 
 }
-.box{
+.company-box{
     border: solid 5px #1abc9c;
     width: 200px;
     margin-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.75) 10px 10px 5px 0px;
 }
 
-.main{
+.pantrion-main-text{
     flex-grow: 6;
 }
 .content{
     width: 70%;
     display: flex;
-    float: center;
     margin: 0 auto;
 
 }
@@ -334,7 +408,6 @@ body{
 
     list-style: none;
     text-align: center;
-    float: center;
 
 }
 .footer-content > ul > li > a{
