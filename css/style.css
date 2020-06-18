@@ -1,8 +1,63 @@
 @charset "UTF-8";
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*{
+    padding: 0;
+}
+
+
 /* fonts start */
 
 .Rezo-Mtavruli{
-    /*font-family: "BPG Nino Mtavruli Bold", sans-serif;*/
     font-size:22px;
 }
 /* fonts end */
@@ -11,7 +66,6 @@
     color: #3D58A6;
 }
 
-
 .index-page-main-photo{
     box-shadow: rgba(0, 0, 0, 0.75) 10px 10px 5px 0px;
 }
@@ -19,7 +73,7 @@
 
 
 /* Design start*/
-#gradation {
+#design-gradation {
     left: 0;
     top: 0;
     background-image: linear-gradient(to right, rgba(0,0,255,0.3), rgba(0,255,0,0.3), rgba(255,0,0,0.3));
@@ -64,20 +118,20 @@ li a:hover { transform: scale(1.1); }
 .design-animation{
     width: 700px;
     height: 100px;
-    background-color: rgba(0,0,255,0.3);
+    background-color: hsl(240, 100%, 80%);
     animation-name: design-animation;
-    animation-duration: 30s;
+    animation-duration: 20s;
 }
 
 @keyframes design-animation {
-    from {background-color: rgba(0,0,255,0.3);}
-    to {background-color: red;}
+    from {background-color: hsl(240, 100%, 10%);}
+    to {background-color: peachpuff;}
 }
 
 .design-transition {
     width: 100px;
     height: 100px;
-    background: red;
+    background-image: linear-gradient(to right, rgba(0,0,255,0.3), rgba(0,255,0,0.3), rgba(255,0,0,0.3));
     transition: width 10s;
 }
 
@@ -96,7 +150,6 @@ li a:hover { transform: scale(1.1); }
     -ms-transform: skewY(5deg); /* IE 9 */
     transform: skewY(5deg);
 }
-
 /* Design End*/
 
 
@@ -104,7 +157,7 @@ li a:hover { transform: scale(1.1); }
 
 
 
-/* about, index, new page start */
+/* about, index, news pages start */
 .header{
     padding-top:30px;
     padding-left:30px;
@@ -165,6 +218,9 @@ a:hover{
     width:15px;
     margin-right: 35px;
 }
+.about-li-tag{
+    margin-top: 4px;
+}
 
 .social-yt{
     height: 30px;
@@ -175,6 +231,7 @@ a:hover{
     padding-left: 35px;
 }
 /* end-footer */
+
 /* articles-block-start */
 .articles-block{
     padding-left:30px;
@@ -211,24 +268,18 @@ a:hover{
     font-size:18px;
 
 }
+
 .text p:last-child{
     padding-bottom:0;
 }
+
 /* articles-block-end */
-
-
-
-/* contact page start */
-
 .contact-session{
     text-align: center;
-    margin-top:100px;
-    margin-bottom: 20px;
+    margin-top:30px;
+    margin-bottom: 10px;
 }
-
-/* contact page end */
-
-/* about, index, new page End */
+/* about, index, news pages End */
 
 
 
@@ -238,61 +289,6 @@ a:hover{
 
 
 
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-
-
-
-
-*{
-    padding: 0;
-}
-body{
-    margin: 0 auto;
-}
 .transform-exmpl {
     margin-top: 30px;
     margin-bottom:30px;
@@ -350,19 +346,18 @@ body{
     width: 15px;
     display: inline;
 }
-.post{
+.pantrion-post{
     height: 400px;
     display: flex;
 }
 
-.posts{
+.design-posts{
     flex-grow: 4;
     display: flex;
     flex-direction: column;
-
 }
 
-.posts > div{
+.design-posts > div{
     display: flex;
     margin: 20px;
     height: 120px;
@@ -388,8 +383,8 @@ body{
 .footer{
     background-color: #565450;
     height: 100px;
-
 }
+
 .footer-content{
     margin:0 auto;
 
@@ -398,59 +393,30 @@ body{
     flex-direction: row;
     justify-content: space-between;
 }
-.footer-content > ul{
-    display: flex;
 
-
-}
-.footer-content > ul > li {
-
-    list-style: none;
-    text-align: center;
-
-}
-.footer-content > ul > li > a{
-    text-decoration: none;
-    color: white;
-
-}
 p {
     color:gray;
 }
 h3{
     color: gray;
 }
+
 h1{
     color: #CEC6C6;
     font-size: 50px;
 }
+
 h2{
     color: white;
 }
-.black-gradient{
-    height: 15px;
-    background-image: linear-gradient(to right, black ,gray, black);
+
+.pantrion-black-gradient{
+    height: 12px;
+    background-image: linear-gradient(to right, #565450, lightgray, #565450);
 }
-.gray-gradient{
+
+.news-gray-gradient{
     margin-top: 16px;
     height: 10px;
     background-image: linear-gradient(to right, #565450,white, #565450);
-}
-.arrow-right {
-    display: none;
-    width: 3px;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-
-    border-left: 8px solid hsl(168, 76%, 42%);
-}
-.arrow-right.active{
-    display: block;
-    width: 3px;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-
-    border-left: 8px solid hsl(168, 76%, 42%);
 }
