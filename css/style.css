@@ -28,6 +28,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+    background-color: #F7F7F7 ;
     line-height: 1;
 }
 
@@ -58,13 +59,15 @@ table {
 /* fonts start */
 
 .Main-Font{
-    font-size:22px;
-}
-/* fonts end */
-
-.hell{
+    font-size:25px;
+    font-weight: bold;
     color: #3D58A6;
 }
+
+.title-center {
+    text-align: center;
+}
+/* fonts end */
 
 .index-page-main-photo{
     box-shadow: rgba(0, 0, 0, 0.75) 10px 10px 5px 0px;
@@ -161,17 +164,23 @@ li a:hover { transform: scale(1.1); }
 .header{
     padding-top:30px;
     padding-left:30px;
-
 }
+
 /* Banner */
 .head-banner{
     width:200px;
+    position: relative;
+    animation-name: headerBanerExample;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
 }
 
-.banner{
-    padding-top: 20px;
-    /* padding-left:30px; */
+@keyframes headerBanerExample {
+    0%   { left:0px;}
+    50%  { left:40px;}
+    100% { left:0px;}
 }
+
 .banner-s{
     margin-top: 30px;
     padding-left:30px;
@@ -183,12 +192,12 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-top:30px;
-    display: flex;
+    margin-top:10px;
+    margin-bottom: 20px;
+    display: inline-flex;
 }
 
 li {
-
     margin-bottom: 7.5px;
     margin: 10px;
 }
