@@ -31,14 +31,19 @@
 </div>
 
 
-<form class="design-section">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname"><br><br>
-    <input type="submit" value="Submit">
-</form>
 
+<div id="error" class="form-elements"></div>
+<form class="design-section" id="form">
+    <div class="form-elements">
+        <label for="name">Name</label>
+        <input class="form-name" id="name" name="name" type="text" required>
+    </div>
+    <div class="form-elements">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required>
+    </div>
+    <button type="submit">Submit</button>
+</form>
 
 <section class="design-section">
 <div >
@@ -61,10 +66,42 @@
     </a>
 </footer>
 
+
 <script>
     function myFunction() {
         alert(" Btn Tapped");
     }
+
+
+    const name = document.getElementById('name')
+    const password = document.getElementById('password')
+    const form = document.getElementById('form')
+    const errorElement = document.getElementById('error')
+
+    form.addEventListener('submit', (e) => {
+        let messages = []
+        if (name.value.length < 4 ) {
+            messages.push('Name must be longer than 6 characters')
+        }
+
+        if (password.value.length <= 6) {
+            messages.push('Password must be longer than 6 characters')
+        }
+
+        if (password.value.length >= 20) {
+            messages.push('Password must be less than 20 characters')
+        }
+
+        if (password.value === 'password') {
+            messages.push('Password cannot be password')
+        }
+
+        if (messages.length > 0) {
+            e.preventDefault()
+            errorElement.innerText = messages.join(', ')
+        }
+    })
+
 </script>
 
 </body>
