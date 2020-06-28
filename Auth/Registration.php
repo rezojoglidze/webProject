@@ -25,12 +25,9 @@ $sql = $con->prepare(" INSERT INTO registration(id,email,password) VALUES(?,?,?)
 
 $sql->bind_param("isssi", $id, $email, $password);
 
-if($sql->execute()){
+if($sql->execute()) {
 	echo "record added";
-}
-
-else
-{
+} else {
 	echo "something went wrong " . $con->mysqli_error;
 }
 
