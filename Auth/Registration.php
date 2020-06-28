@@ -6,13 +6,14 @@ $password = "";
 $dbname = "webProject";
 
 
+// connect to the database
 $con = new mysqli($server, $usernm, $passwd, $dbname);
 
 if($con->connect_error) {
 	die("Connection failed " . $con->connect_error);
 }
 
-$id = 3;
+$id = 4;
 $email = stripcslashes($_POST["email"]);
 $email = mysqli_real_escape_string($con,$email);
 
@@ -26,10 +27,9 @@ $sql = $con->prepare(" INSERT INTO registration(id,email,password) VALUES(?,?,?)
 $sql->bind_param("iss", $id, $email, $password);
 
 if($sql->execute()) {
-	echo "record added";
+	echo "New record created successfully";
 } else {
 	echo "something went wrong " . $con->mysqli_error;
 }
-
 
 ?>

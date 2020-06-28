@@ -16,7 +16,7 @@
     </h1>
 </header>
 
-<form action="LogIn.php">
+<form action="LogIn.php" method="post">
     <div class="container">
         <h1 class="registration-h1">შესვლა</h1>
         <p>შეავსეთ ყველა ველი.</p>
@@ -26,10 +26,10 @@
         <input type="text" placeholder="შეიყვანე ელ-ფოსტა" name="email" id="email" required>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+        <input type="password" placeholder="Enter Password" name="password" id="psw" required>
         <hr>
 
-        <button type="submit" class="registerbtn">შესვლა</button>
+        <button type="submit" name="submit" class="registerbtn">შესვლა</button>
     </div>
 
     <div class="container signin">
@@ -41,34 +41,34 @@
 <script>
 
 
-    const name = document.getElementById('name')
-    const password = document.getElementById('password')
-    const form = document.getElementById('form')
-    const errorElement = document.getElementById('error')
-
-    form.addEventListener('submit', (e) => {
-        let messages = []
-        if (name.value.length < 4 ) {
-            messages.push('Name must be longer than 6 characters')
-        }
-
-        if (password.value.length <= 6) {
-            messages.push('Password must be longer than 6 characters')
-        }
-
-        if (password.value.length >= 20) {
-            messages.push('Password must be less than 20 characters')
-        }
-
-        if (password.value === 'password') {
-            messages.push('Password cannot be password')
-        }
-
-        if (messages.length > 0) {
-            e.preventDefault()
-            errorElement.innerText = messages.join(', ')
-        }
-    })
+    // const name = document.getElementById('name')
+    // const password = document.getElementById('password')
+    // const form = document.getElementById('form')
+    // const errorElement = document.getElementById('error')
+    //
+    // form.addEventListener('submit', (e) => {
+    //     let messages = []
+    //     if (name.value.length < 4 ) {
+    //         messages.push('Name must be longer than 6 characters')
+    //     }
+    //
+    //     if (password.value.length <= 6) {
+    //         messages.push('Password must be longer than 6 characters')
+    //     }
+    //
+    //     if (password.value.length >= 20) {
+    //         messages.push('Password must be less than 20 characters')
+    //     }
+    //
+    //     if (password.value === 'password') {
+    //         messages.push('Password cannot be password')
+    //     }
+    //
+    //     if (messages.length > 0) {
+    //         e.preventDefault()
+    //         errorElement.innerText = messages.join(', ')
+    //     }
+    // })
 
 </script>
 
