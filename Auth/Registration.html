@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="author" content="რეზო ჯოგლიძე">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+<header class="header">
+    <h1>
+        <a href="../index.html"><img class="head-banner" src="../img/head-banner.svg" alt="head-banner is missing"></a>
+    </h1>
+</header>
+
+<form action="Registration.php" method="post">
+    <div class="container">
+        <h1 class="registration-h1">რეგისტრაცია</h1>
+        <p>შეავსეთ ყველა ველი.</p>
+        <hr>
+
+        <label for="email"><b>ელ-ფოსტა</b></label>
+        <input type="text" placeholder="შეიყვანე ელ-ფოსტა" name="email" id="email" required>
+
+        <label for="psw"><b>პაროლი</b></label>
+        <input type="password" placeholder="შეიყვანეთ პაროლი" name="psw" id="psw" required>
+
+        <label for="psw-repeat"><b>გაიმეორეთ პაროლი</b></label>
+        <input type="password" placeholder="გაიმეორეთ პაროლი" name="psw-repeat" id="psw-repeat" required>
+        <hr>
+
+        <button type="submit" class="registerbtn">რეგისრტაცია</button>
+    </div>
+
+    <div class="container signin">
+        <p>უკვე გაქვთ მომხარებელი? <a href="LogIn.html">შესვლა</a>.</p>
+    </div>
+</form>
+
+</body>
+</html>
