@@ -5,11 +5,10 @@ $usernm = "root";
 $password = "";
 $dbname = "webProject";
 
-//$con = mysqli_connect($server, $usernm, $passwd,$dbname);
 
 $con = new mysqli($server, $usernm, $passwd, $dbname);
 
-if($con->connect_error){
+if($con->connect_error) {
 	die("Connection failed " . $con->connect_error);
 }
 
