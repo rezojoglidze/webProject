@@ -12,7 +12,7 @@ if($con->connect_error) {
 	die("Connection failed " . $con->connect_error);
 }
 
-$id = 5;
+$id = 3;
 $email = stripcslashes($_POST["email"]);
 $email = mysqli_real_escape_string($con,$email);
 
@@ -23,7 +23,7 @@ $password = mysqli_real_escape_string($con,$password);
 
 $sql = $con->prepare(" INSERT INTO registration(id,email,password) VALUES(?,?,?) ");
 
-$sql->bind_param("isssi", $id, $email, $password);
+$sql->bind_param("iss", $id, $email, $password);
 
 if($sql->execute()) {
 	echo "record added";

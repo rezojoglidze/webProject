@@ -16,7 +16,7 @@
     </h1>
 </header>
 
-<form method="post">
+<form action="Registration.php" method="post">
     <div class="container">
         <h1 class="registration-h1">რეგისტრაცია</h1>
         <p>შეავსეთ ყველა ველი.</p>
@@ -42,40 +42,3 @@
 
 </body>
 </html>
-
-
-<?php
-
-    echo "shemovida";
-
-$server = "localhost";
-$usernm = "root";
-$password = "";
-$dbname = "webProject";
-
-
-$con = new mysqli($server, $usernm, $passwd, $dbname);
-
-    if($con->connect_error) {
-       die("Connection failed " . $con->connect_error);
-    }
-
-    $id = 5;
-    if(isset($_POST["submit"])) {
-    $email = stripcslashes($_POST["email"]);
-    $email = mysqli_real_escape_string($con,$email);
-    $password = stripcslashes($_POST["psw"]);
-    $password = mysqli_real_escape_string($con,$password);
-
-    $sql = $con->prepare(" INSERT INTO registration(id,email,password) VALUES(?,?,?) ");
-    $sql->bind_param($id, $email, $password);
-
-    if($sql->execute()) {
-    echo "record added";
-       } else {
-    echo "something went wrong " . $con->mysqli_error;
-      }
-    }
-
-
-?>
