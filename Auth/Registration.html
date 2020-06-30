@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
@@ -16,10 +16,10 @@
     </h1>
 </header>
 
-<form action="Registration.php" method="post">
+<form id="form" action="Registration.php" method="post">
     <div class="container">
         <h1 class="registration-h1">რეგისტრაცია</h1>
-        <p>შეავსეთ ყველა ველი.</p>
+        <p id="error">შეავსეთ ყველა ველი.</p>
         <hr>
 
         <label for="email"><b>ელ-ფოსტა</b></label>
@@ -39,6 +39,45 @@
         <p>უკვე გაქვთ მომხარებელი? <a href="LogIn.html">შესვლა</a>.</p>
     </div>
 </form>
+
+
+<script>
+
+    const name = document.getElementById('email')
+    const password = document.getElementById('psw')
+    const passwordRepeat = document.getElementById('psw-repeat')
+    const form = document.getElementById('form')
+    const errorElement = document.getElementById('error')
+
+    form.addEventListener('submit', (e) => {
+        let messages = []
+        if (name.value.length < 4 ) {
+             messages.push('Name must be longer than 6 characters')
+        }
+
+        if(password.value != passwordRepeat.value) {
+            messages.push('პაროლები ერთმანეთს არ ემთხვევა')
+        }
+
+        if (password.value.length <= 6) {
+          messages.push('Password must be longer than 6 characters')
+        }
+
+        if (password.value.length >= 20) {
+          messages.push('Password must be less than 20 characters')
+        }
+
+         if (password.value === 'password') {
+         messages.push('Password cannot be password')
+         }
+
+        if (messages.length > 0) {
+           e.preventDefault()
+          errorElement.innerText = messages.join(', ')
+     }
+    })
+
+</script>
 
 </body>
 </html>

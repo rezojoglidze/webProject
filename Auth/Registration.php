@@ -7,13 +7,13 @@ $dbname = "webProject";
 
 
 // connect to the database
-$con = new mysqli($server, $usernm, $passwd, $dbname);
+$con = new mysqli($server, $usernm, $password, $dbname);
 
 if($con->connect_error) {
 	die("Connection failed " . $con->connect_error);
 }
 
-$id = 4;
+$id = 5;
 $email = stripcslashes($_POST["email"]);
 $email = mysqli_real_escape_string($con,$email);
 

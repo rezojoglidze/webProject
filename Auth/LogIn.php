@@ -13,15 +13,21 @@
 
         // Create connection
         $con= new mysqli('localhost','root','','webProject'); //or die(mysql_error());
-        $sql=("select * from registration where email='".$email."'AND password='".$password."' limit 1");
+        $sql=("SELECT * FROM registration WHERE email='".$email."'AND password='".$password."' limit 1");
 
         $result=$con->query($sql);
 
         if( $result->num_rows > 0){
-            echo " You Have Successfully Logged in";
+        echo "You Have Successfully Logged in";
+
+        // Temporarily in $_POST structure.
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['password'] = $_POST['password'];
+
+        header("Location: http://localhost:8080/webProject/index.php");
             exit();
         } else {
-            echo " You Have Entered Incorrect Password";
+            echo "არასწორი პაროლი ან ლოგინი";
             exit();
         }
     }
