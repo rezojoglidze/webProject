@@ -1,8 +1,7 @@
 
-
  <?php
         if(isset($_SESSION['email'])){
-             echo $_SESSION['email'];
+             echo 'გამარჯობა '; echo $_SESSION['email'];
 //              echo <p>$_SESSION['email']</p>;
 
              echo '<form  action="Auth/logOut.php" method="post">

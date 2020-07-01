@@ -1,7 +1,7 @@
 <?php
 // Include the database configuration file
 
-include("uploadImage/config.php");
+include("../database/configDatabase.php");
 
 // If file upload form is submitted
 $status = $statusMsg = '';
@@ -26,7 +26,7 @@ if(isset($_POST["submit"])){
             if($insert){
                 $status = 'success';
                 $statusMsg = "File uploaded successfully.";
-                header("Location: http://localhost:8080/webProject/uploadFiles/imageView.php");
+                header("Location: http://localhost:8080/webProject/gallery.php");
 
             }else{
                 $statusMsg = "File upload failed, please try again.";

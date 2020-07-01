@@ -65,7 +65,7 @@ table {
 }
 
 .title-center {
-    margin-top: 30px;
+
     text-align: center;
 }
 /* fonts end */
@@ -529,11 +529,6 @@ hr {
     margin-bottom: 50px;
 }
 
-
-
-
-
-
 .logOut_btn {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -548,7 +543,6 @@ hr {
 
 }
 
-
 .logOut_slash {
     /*background-color: #4CAF50; !* Green *!*/
     border: none;
@@ -558,4 +552,35 @@ hr {
     font-size: 20px;
     cursor: pointer;
     border-radius: 12px;
+}
+#gallery-content{
+    width: 50%;
+    margin: 40px auto;
+    border: 3px solid #cbcbcb;
+    box-shadow: rgba(0, 0, 0, 0.75) 5px 5px 5px 0px;
+}
+
+.gallery-form{
+    width: 50%;
+    margin: 20px auto;
+}
+.gallery-form-div{
+    margin-top: 5px;
+}
+#gallery-img_div{
+    width: 80%;
+    padding: 5px;
+    margin: 15px auto;
+    border: 1px solid #cbcbcb;
+}
+#gallery-img_div:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.gallery-img{
+    float: left;
+    margin: 5px;
+    height: 100px;
+    width: 100px;
 }

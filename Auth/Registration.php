@@ -1,45 +1,32 @@
 <?php
 
-$server = "localhost";
-$usernm = "root";
-$password = "";
-$dbname = "webProject";
+    include("../database/configDatabase.php");
 
 
-// connect to the database
-$con = new mysqli($server, $usernm, $password, $dbname);
+    $id = rand();
+    $isAdmin = 0;
+    $firstName = stripcslashes($_POST["firstName"]);
+    $firstName = mysqli_real_escape_string($con,$firstName);
 
-if($con->connect_error) {
-	die("Connection failed " . $con->connect_error);
-}
+    $lastName = stripcslashes($_POST["lastName"]);
+    $lastName = mysqli_real_escape_string($con,$lastName);
 
-$id = rand();
-$firstName = stripcslashes($_POST["firstName"]);
-$firstName = mysqli_real_escape_string($con,$firstName);
+    $email = stripcslashes($_POST["email"]);
+    $email = mysqli_real_escape_string($con,$email);
 
-$lastName = stripcslashes($_POST["lastName"]);
-$lastName = mysqli_real_escape_string($con,$lastName);
+    $password = stripcslashes($_POST["psw"]);
+    $password = mysqli_real_escape_string($con,$password);
 
-$email = stripcslashes($_POST["email"]);
-$email = mysqli_real_escape_string($con,$email);
+     $insert = $con->query("INSERT into registration (email,password,firstName,lastName,isAdmin) VALUES ('$email', '$password','$firstName','$lastName','$isAdmin')");
 
-$password = stripcslashes($_POST["psw"]);
-$password = mysqli_real_escape_string($con,$password);
+     if($insert){
+        echo "New record created successfully";
+         session_start();
+         $_SESSION['email'] = $_POST['email'];
 
-
-
-$sql = $con->prepare(" INSERT INTO registration(id,email,password,firstName,lastName) VALUES(?,?,?,?,?) ");
-
-$sql->bind_param("issss", $id, $email, $password,$firstName,$lastName);
-
-if($sql->execute()) {
-	echo "New record created successfully";
-	 session_start();
-     $_SESSION['email'] = $_POST['email'];
-
-     header("Location: http://localhost:8080/webProject/index.php");
-} else {
-	echo "something went wrong " . $con->mysqli_error;
-}
+         header("Location: http://localhost:8080/webProject/index.php");
+    } else {
+        echo "something went wrong " . $con->mysqli_error;
+    }
 
 ?>

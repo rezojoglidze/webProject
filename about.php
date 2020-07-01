@@ -15,31 +15,9 @@
 
 
 <body>
-<header class="header">
 
-    <div>
-        <div class="head-banner">
-            <h1>
-               <img src="img/head-banner.svg" alt="head-banner is missing">
-            </h1>
-        </div>
+<?php include("header/header.php"); ?>
 
-        <div class="headers-auth-fields">
-            <?php
-                include("AuthLogic.php");
-            ?>
-        </div>
-    </div>
-
-     <nav class="title-center">
-            <ul class="Main-Font">
-                <li><a class="menu-a" href="index.php">მთავარი</a></li>
-                <li><a class="menu-a" href="news.php">სიახლეები</a></li>
-                <li><a class="menu-a" href="about.php">კონტაქტი</a></li>
-                <li><a class="menu-a" href="pantrionCompany.php">პანტრიონი კომპანია</a></li>
-            </ul>
-        </nav>
-</header>
 
 <div class="content" id="content"> </div>
 

@@ -1,6 +1,6 @@
 <?php
 
-include("uploadImage/config.php");
+include("database/configDatabase.php");
 
 // Get image data from database
 $result = $con->query("SELECT image FROM images");
@@ -12,47 +12,24 @@ $result = $con->query("SELECT image FROM images");
 <!DOCTYPE html>
 <html>
 <head>
-<title>Image Upload</title>
-<style type="text/css">
-   #content{
-   	width: 50%;
-   	margin: 40px auto;
-   	border: 3px solid #cbcbcb;
-    box-shadow: rgba(0, 0, 0, 0.75) 5px 5px 5px 0px;
-   }
-
-   form{
-   	width: 50%;
-   	margin: 20px auto;
-   }
-   form div{
-   	margin-top: 5px;
-   }
-   #img_div{
-   	width: 80%;
-   	padding: 5px;
-   	margin: 15px auto;
-   	border: 1px solid #cbcbcb;
-   }
-   #img_div:after{
-   	content: "";
-   	display: block;
-   	clear: both;
-   }
-   img{
-   	float: left;
-   	margin: 5px;
-   	height: 100px;
-   }
-</style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>გალერეა</title>
+    <meta name="author" content="რეზო ჯოგლიძე">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
+
 <body>
-<div id="content">
+
+<?php include("header/header.php"); ?>
+
+<div id="gallery-content">
   <?php if($result->num_rows > 0){ ?>
   <div class="gallery" style= "width: 50%; margin: 20px auto; border: 1px solid #cbcbcb;">
       <?php while($row = $result->fetch_assoc()){ ?>
-           <div id='img_div'>
-        	 <img src="data:image/jpg charset=utf8; base64,<?php echo base64_encode($row['image']) ?>" />
+           <div id='gallery-img_div'>
+        	 <img class="gallery-img" src="data:image/jpg charset=utf8; base64,<?php echo base64_encode($row['image']) ?>" />
               	 <p> here is a text </p>
           </div>
       <?php } ?>
@@ -62,12 +39,12 @@ $result = $con->query("SELECT image FROM images");
   <?php } ?>
 
 
-  <form method="POST" action="upload.php" enctype="multipart/form-data">
+  <form class="gallery-form" method="POST" action="uploadFiles/upload.php" enctype="multipart/form-data">
   	<input type="hidden" name="size" value="1000000">
-  	<div>
+  	<div class="gallery-form-div">
   	  <input type="file" name="image">
   	</div>
-  	<div>
+  	<div class="gallery-form-div">
       <textarea
       	id="text"
       	cols="40"
@@ -75,7 +52,7 @@ $result = $con->query("SELECT image FROM images");
       	name="image_text"
       	placeholder="Say something about this image..."></textarea>
   	</div>
-  	<div>
+  	<div class="gallery-form-div">
   		<button type="submit" name="submit">POST</button>
   	</div>
   </form>
