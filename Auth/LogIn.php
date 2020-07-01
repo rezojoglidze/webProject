@@ -2,7 +2,6 @@
 
    include("../database/configDatabase.php");
 
-
     if(isset($_POST['submit'])){
 
         $email=$_POST['email'];
@@ -17,12 +16,18 @@
             $row = $result->fetch_assoc();
             session_start();
 
+            $userId = $row['id'];
+
+
            if( $row['isAdmin'] == true ) {
              echo "admin aris";
+             $_SESSION['email'] = $_POST['email'];
+             header("Location: http://localhost:8080/webProject/AdminPanel/admin.php");
+             exit();
            } else {
               $_SESSION['email'] = $_POST['email'];
               header("Location: http://localhost:8080/webProject/index.php");
-               exit();
+              exit();
            }
         } else {
             echo "არასწორი პაროლი ან ლოგინი";

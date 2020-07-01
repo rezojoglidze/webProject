@@ -65,8 +65,12 @@ table {
 }
 
 .title-center {
-
     text-align: center;
+ }
+
+.admin-title-center {
+    text-align: left;
+    margin-top: 50px;
 }
 /* fonts end */
 
@@ -540,7 +544,6 @@ hr {
     font-size: 15px;
     cursor: pointer;
     border-radius: 12px
-
 }
 
 .logOut_slash {
@@ -553,6 +556,7 @@ hr {
     cursor: pointer;
     border-radius: 12px;
 }
+
 #gallery-content{
     width: 50%;
     margin: 40px auto;
@@ -564,23 +568,33 @@ hr {
     width: 50%;
     margin: 20px auto;
 }
+
 .gallery-form-div{
     margin-top: 5px;
 }
+
 #gallery-img_div{
     width: 80%;
     padding: 5px;
     margin: 15px auto;
     border: 1px solid #cbcbcb;
 }
+
 #gallery-img_div:after{
     content: "";
     display: block;
     clear: both;
 }
-.gallery-img{
+
+.gallery-img {
     float: left;
     margin: 5px;
     height: 100px;
     width: 100px;
+}
+
+.admin-p {
+    margin: 50px;
+    font-weight: bold;
+    font-size: 50px;
 }

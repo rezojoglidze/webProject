@@ -1,24 +1,19 @@
 <?php
     session_start()
 ?>
-
-
 <?php
-
-include("database/configDatabase.php");
-
-// Get image data from database
-$result = $con->query("SELECT image FROM images");
+//     session_start()
+    include("../database/configDatabase.php");
+    // Get image data from database
+    $result = $con->query("SELECT image FROM images");
 ?>
-
-
 
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>გალერეა</title>
     <meta name="author" content="რეზო ჯოგლიძე">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,8 +21,11 @@ $result = $con->query("SELECT image FROM images");
 
 
 <body>
-
-<?php include("header/header.php"); ?>
+ <header class="header">
+     <h1>
+        <p>იუზერები</p>
+     </h1>
+ </header>
 
 <div id="gallery-content">
   <?php if($result->num_rows > 0){ ?>
@@ -44,7 +42,7 @@ $result = $con->query("SELECT image FROM images");
   <?php } ?>
 
 
-  <form class="gallery-form" method="POST" action="uploadFiles/upload.php" enctype="multipart/form-data">
+  <form class="gallery-form" method="POST" action="../uploadFiles/upload.php" enctype="multipart/form-data">
   	<input type="hidden" name="size" value="1000000">
   	<div class="gallery-form-div">
   	  <input type="file" name="image">

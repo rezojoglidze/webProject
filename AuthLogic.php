@@ -15,8 +15,8 @@
                echo    '<p class="logOut_slash" style="margin-right: 1px; margin-left: 1px"> / </p>';
 
                echo  '<form  action="Auth/Registration.html" method="post">
-                                                 <button class="logOut_btn" type="submit" name="registracion-submit">რეგისტრაცია</button>
-                                                 </form>';
+                      <button class="logOut_btn" type="submit" name="registracion-submit">რეგისტრაცია</button>
+                       </form>';
                echo   '</ul>';
         }
   ?>
