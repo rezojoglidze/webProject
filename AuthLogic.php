@@ -1,8 +1,9 @@
 
  <?php
-        if(isset($_SESSION['email'])){
+        if(isset($_SESSION['email']) || isset($_SESSION['id'])) {
+
              echo 'გამარჯობა '; echo $_SESSION['email'];
-//              echo <p>$_SESSION['email']</p>;
+             echo ' id -> '; echo $_SESSION['id'];
 
              echo '<form  action="Auth/logOut.php" method="post">
                    <button class="logOut_btn" type="submit" name="logout-submit">გასვლა</button>

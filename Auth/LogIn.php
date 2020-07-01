@@ -12,20 +12,34 @@
         $result=$con->query($sql);
 
         if( $result->num_rows > 0){
-            echo "You Have Successfully Logged in";
+            echo "You Have Successfully Logged in  ";
             $row = $result->fetch_assoc();
             session_start();
-
             $userId = $row['id'];
 
+//             $value = filter_input(INPUT_POST, '$userId');
+//             if (!isset($_POST['$userId'])) {
+//                 $value = $userId;
+//             } elseif (is_array($_POST['$userId'])) {
+//                 $value = $userId;
+//             } else {
+//                 $value = $_POST['$userId'];
+//             }
+
+
+            echo "userId";
+            echo $value;
 
            if( $row['isAdmin'] == true ) {
-             echo "admin aris";
              $_SESSION['email'] = $_POST['email'];
-             header("Location: http://localhost:8080/webProject/AdminPanel/admin.php");
+             $_SESSION['id'] = $_POST['value'];
+             echo $_POST['value'];
+
+            header("Location: http://localhost:8080/webProject/AdminPanel/admin.php");
              exit();
            } else {
               $_SESSION['email'] = $_POST['email'];
+            //  $_SESSION['id'] = $_POST['id'];
               header("Location: http://localhost:8080/webProject/index.php");
               exit();
            }
