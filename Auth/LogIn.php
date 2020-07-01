@@ -18,8 +18,10 @@
         $result=$con->query($sql);
 
         if( $result->num_rows > 0){
-        echo "You Have Successfully Logged in";
+         echo "You Have Successfully Logged in";
 
+        session_start();
+//
         // Temporarily in $_POST structure.
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['password'] = $_POST['password'];

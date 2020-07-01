@@ -1,3 +1,8 @@
+<?php
+    session_start()
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,23 +25,21 @@
         </div>
 
         <div class="headers-auth-fields">
-            <ul>
-                <a style="margin-right: 5px" href="Auth/LogIn.html">შესვლა</a>
-                <p style="margin-right: 5px"> / </p>
-                <a href="Auth/Registration.html">რეგისტრაცია</a>
-            </ul>
+            <?php
+                 include("AuthLogic.php");
+             ?>
         </div>
     </div>
 
 
     <nav class="title-center">
-        <ul class="Main-Font" class="hell">
-            <li ><a href="index.html">მთავარი</a></li>
-            <li><a href="news.html">სიახლეები</a></li>
-            <li><a href="about.html">კონტაქტი</a></li>
-            <li><a href="pantrionCompany.html">პანტრიონი კომპანია</a></li>
-        </ul>
-    </nav>
+           <ul class="Main-Font">
+               <li><a class="menu-a" href="index.php">მთავარი</a></li>
+               <li><a class="menu-a" href="news.php">სიახლეები</a></li>
+               <li><a class="menu-a" href="about.php">კონტაქტი</a></li>
+               <li><a class="menu-a" href="pantrionCompany.php">პანტრიონი კომპანია</a></li>
+           </ul>
+       </nav>
 </header>
 
 <section class="articles-block">
