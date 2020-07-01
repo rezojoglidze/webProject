@@ -18,15 +18,25 @@
         $result=$con->query($sql);
 
         if( $result->num_rows > 0){
-         echo "You Have Successfully Logged in";
+            echo "You Have Successfully Logged in";
+            $row = $result->fetch_assoc();
+            session_start();
+            
+           if( $row['isAdmin'] == true ) {
+             echo "admin aris";
+           } else {
+              $_SESSION['email'] = $_POST['email'];
 
-        session_start();
-//
+              header("Location: http://localhost:8080/webProject/index.php");
+           }
+
+
+
         // Temporarily in $_POST structure.
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['password'] = $_POST['password'];
 
-        header("Location: http://localhost:8080/webProject/index.php");
+      //  header("Location: http://localhost:8080/webProject/index.php");
             exit();
         } else {
             echo "არასწორი პაროლი ან ლოგინი";
