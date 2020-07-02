@@ -1,12 +1,19 @@
 <?php
-    session_start()
+    session_start();
+include("../database/configDatabase.php");
+    if(isset($_SESSION['isAdmin']) && isset($_SESSION['userid']) && !empty($_SESSION['userid'])) {
+          if($_SESSION['isAdmin'] == 1) {
+          echo " session  is available, Welcome $_SESSION[userid] ";
+          } else {
+          echo " თქვენ არ გაქვთ ადმინის უფლება";
+          exit;
+      }
+      }
+//     $result = $con->query("SELECT image FROM images WHERE uid=$_SESSION[userid]");
 ?>
 
-<?php
-    if(isset($_SESSION['email'])){
-         echo 'გამარჯობა '; echo $_SESSION['email'];
-    }
-?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">

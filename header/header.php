@@ -47,7 +47,7 @@
                 <li><a class="menu-a" href="news.php">სიახლეები</a></li>
                 <li><a class="menu-a" href="about.php">კონტაქტი</a></li>
                 <li><a class="menu-a" href="pantrionCompany.php">კომპანია</a></li>
-                <li><a class="menu-a" href="gallery.php">გალერეა</a></li>
+                <li><a class="menu-a" href="gallery.php">ფოტოები</a></li>
             </ul>
         </nav>
 </header>

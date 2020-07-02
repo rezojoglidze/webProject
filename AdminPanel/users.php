@@ -2,10 +2,8 @@
     session_start()
 ?>
 <?php
-//     session_start()
     include("../database/configDatabase.php");
-    // Get image data from database
-    $result = $con->query("SELECT image FROM images");
+    $result = $con->query("SELECT * FROM registration");
 ?>
 
 
@@ -32,8 +30,7 @@
   <div class="gallery" style= "width: 50%; margin: 20px auto; border: 1px solid #cbcbcb;">
       <?php while($row = $result->fetch_assoc()){ ?>
            <div id='gallery-img_div'>
-        	 <img class="gallery-img" src="data:image/jpg charset=utf8; base64,<?php echo base64_encode($row['image']) ?>" />
-              	 <p> here is a text </p>
+             	 <p> <?php echo $row['firstName'] ?> </p>
           </div>
       <?php } ?>
   </div>

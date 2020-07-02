@@ -1,9 +1,5 @@
 <?php
     session_start();
-?>
-
-<?php
-
 include("database/configDatabase.php");
     if(isset($_SESSION['userid']) && !empty($_SESSION['userid'])) {
           echo " session  is available, Welcome $_SESSION[userid] ";
@@ -11,7 +7,7 @@ include("database/configDatabase.php");
           echo "ფოტოების სანახავად გაიარეთ ავტორიზაცია ან რეგისტრაცია";
           exit;
       }
-    $result = $con->query("SELECT image FROM images WHERE uid=145199700");
+    $result = $con->query("SELECT * FROM images WHERE uid=$_SESSION[userid]");
 ?>
 
 
@@ -37,7 +33,7 @@ include("database/configDatabase.php");
       <?php while($row = $result->fetch_assoc()){ ?>
            <div id='gallery-img_div'>
         	 <img class="gallery-img" src="data:image/jpg charset=utf8; base64,<?php echo base64_encode($row['image']) ?>" />
-              	 <p> here is a text </p>
+              	 <p> <?php echo $row['image_text']?>  </p>
           </div>
       <?php } ?>
   </div>
