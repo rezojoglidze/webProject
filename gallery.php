@@ -48,17 +48,12 @@ include("database/configDatabase.php");
   	  <input type="file" name="image">
   	</div>
   	<div class="gallery-form-div">
-      <textarea
-      	id="text"
-      	cols="40"
-      	rows="4"
-      	name="image_text"
-      	placeholder="Say something about this image..."></textarea>
+      <textarea id="text" cols="40" rows="4" name="image_text" placeholder="Say something about this image..."></textarea>
   	</div>
   	<div class="gallery-form-div">
   		<button type="submit" name="submit">POST</button>
   	</div>
-  </form>
-</div>
+  	 </form>
+  </div>
 </body>
 </html>

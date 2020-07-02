@@ -12,22 +12,18 @@
         $result=$con->query($sql);
 
         if( $result->num_rows > 0){
-            session_start();
             echo "You Have Successfully Logged in  ";
             $row = $result->fetch_assoc();
 
-
+            session_start();
             $_SESSION['userid']= $row['id'];
             $_SESSION['isAdmin']= $row['isAdmin'];
+            $_SESSION['email'] = $_POST['email'];
 
            if( $row['isAdmin'] == true ) {
-             $_SESSION['email'] = $_POST['email'];
-
-
            header("Location: http://localhost:8080/webProject/AdminPanel/admin.php");
              exit();
            } else {
-              $_SESSION['email'] = $_POST['email'];
              header("Location: http://localhost:8080/webProject/index.php");
               exit();
            }

@@ -39,6 +39,5 @@ session_start();
      }
 }
 
-// Display status message
 echo $statusMsg;
 ?>

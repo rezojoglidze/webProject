@@ -18,9 +18,7 @@
         <div class="headers-auth-fields">
             <?php
                  if(isset($_SESSION['email']) || isset($_SESSION['id'])) {
-
                             echo 'გამარჯობა '; echo $_SESSION['email'];
-               //              echo ' id -> '; echo $_SESSION['id'];
 
                             echo '<form  action="Auth/logOut.php" method="post">
                                   <button class="logOut_btn" type="submit" name="logout-submit">გასვლა</button>

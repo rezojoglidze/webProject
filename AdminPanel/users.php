@@ -30,7 +30,7 @@
   <div class="gallery" style= "width: 50%; margin: 20px auto; border: 1px solid #cbcbcb;">
       <?php while($row = $result->fetch_assoc()){ ?>
            <div id='gallery-img_div'>
-             	 <p> <?php echo $row['firstName'] ?> </p>
+             	 <p> <?php echo $row['firstName']; echo "   "; echo $row['lastName'] ?> </p>
           </div>
       <?php } ?>
   </div>
@@ -39,19 +39,7 @@
   <?php } ?>
 
 
-  <form class="gallery-form" method="POST" action="../uploadFiles/upload.php" enctype="multipart/form-data">
-  	<input type="hidden" name="size" value="1000000">
-  	<div class="gallery-form-div">
-  	  <input type="file" name="image">
-  	</div>
-  	<div class="gallery-form-div">
-      <textarea
-      	id="text"
-      	cols="40"
-      	rows="4"
-      	name="image_text"
-      	placeholder="Say something about this image..."></textarea>
-  	</div>
+  <form class="gallery-form" method="POST" action="" enctype="multipart/form-data">
   	<div class="gallery-form-div">
   		<button type="submit" name="submit">POST</button>
   	</div>
