@@ -598,3 +598,7 @@ hr {
     font-weight: bold;
     font-size: 50px;
 }
+
+#admin-selected{
+   margin-bottom: 100px;
+}

@@ -14,7 +14,7 @@
     $password = stripcslashes($_POST["psw"]);
     $password = mysqli_real_escape_string($con,$password);
 
-     $insert = $con->query("INSERT into registration (email,password,firstName,lastName,isAdmin) VALUES ('$email', '$password','$firstName','$lastName','$isAdmin')");
+     $insert = $con->query("INSERT into users (email,password,firstName,lastName,isAdmin) VALUES ('$email', '$password','$firstName','$lastName','$isAdmin')");
 
      if($insert) {
          session_start();

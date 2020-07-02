@@ -1,9 +1,7 @@
 <?php
-    session_start()
-?>
-<?php
+    session_start();
     include("../database/configDatabase.php");
-    $result = $con->query("SELECT * FROM registration");
+    $result = $con->query("SELECT * FROM users");
 ?>
 
 
@@ -20,30 +18,35 @@
 
 <body>
  <header class="header">
-     <h1>
-        <p>იუზერები</p>
-     </h1>
+     <h1> <p>იუზერები</p> </h1>
  </header>
 
 <div id="gallery-content">
-  <?php if($result->num_rows > 0){ ?>
-  <div class="gallery" style= "width: 50%; margin: 20px auto; border: 1px solid #cbcbcb;">
-      <?php while($row = $result->fetch_assoc()){ ?>
-           <div id='gallery-img_div'>
-             	 <p> <?php echo $row['firstName']; echo "   "; echo $row['lastName'] ?> </p>
-          </div>
-      <?php } ?>
-  </div>
-  <?php }else{ ?>
-  <p class="status error">Image(s) not found...</p>
-  <?php } ?>
+  <div class="gallery" style= "width: 80%; margin: 20px auto; border: 1px solid #cbcbcb; padding: 50px">
 
+    <p>
+        <select style="margin-bottom: 5px"; id="select1">
+        <?php while($row = $result->fetch_assoc()){ ?>
+        <option value="<?php echo $row['id'] ?>"><?php echo $row['firstName']; echo "   "; echo $row['lastName'] ?> </option>
+        <?php } ?> </select>
+     </p>
+
+    <p style="margin-bottom: 5px";> The value of the option selected is: <span class="output"></span> </p>
+    <button onclick="getOption()"> Check option </button>
+    <button onclick="getOption()"> Check option </button>
+  </div>
 
   <form class="gallery-form" method="POST" action="" enctype="multipart/form-data">
-  	<div class="gallery-form-div">
   		<button type="submit" name="submit">POST</button>
-  	</div>
   </form>
 </div>
+
+    <script type="text/javascript">
+        function getOption() {
+            selectElement = document.querySelector('#select1');
+            output = selectElement.value;
+            document.querySelector('.output').textContent = output;
+        }
+    </script>
 </body>
 </html>
