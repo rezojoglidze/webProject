@@ -3,7 +3,6 @@
     include("../database/configDatabase.php");
 
 
-    $id = rand();
     $isAdmin = 0;
     $firstName = stripcslashes($_POST["firstName"]);
     $firstName = mysqli_real_escape_string($con,$firstName);
@@ -19,8 +18,8 @@
 
      $insert = $con->query("INSERT into registration (email,password,firstName,lastName,isAdmin) VALUES ('$email', '$password','$firstName','$lastName','$isAdmin')");
 
-     if($insert){
-        echo "New record created successfully";
+     if($insert) {
+         echo "New record created successfully";
          session_start();
          $_SESSION['email'] = $_POST['email'];
 

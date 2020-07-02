@@ -1,9 +1,6 @@
 <?php
     session_start();
-
-
 ?>
-
 
 <?php
 
@@ -11,13 +8,11 @@ include("database/configDatabase.php");
     if(isset($_SESSION['userid']) && !empty($_SESSION['userid'])) {
           echo " session  is available, Welcome $_SESSION[userid] ";
           } else {
-          echo " No Session , Please Login ";
+          echo "ფოტოების სანახავად გაიარეთ ავტორიზაცია ან რეგისტრაცია";
           exit;
       }
-    $result = $con->query("SELECT image FROM images WHERE id =24");
+    $result = $con->query("SELECT image FROM images WHERE uid=145199700");
 ?>
-
-
 
 
 <!DOCTYPE html>

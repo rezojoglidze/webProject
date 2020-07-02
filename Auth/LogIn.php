@@ -17,9 +17,8 @@
             $row = $result->fetch_assoc();
 
 
-$userid=$row['id'];
-$_SESSION['userid']=$userid;
-echo "Welcome $_SESSION[userid]";
+            $userid=$row['id'];
+            $_SESSION['userid']=$userid;
 
            if( $row['isAdmin'] == true ) {
              $_SESSION['email'] = $_POST['email'];
