@@ -1,14 +1,20 @@
 <?php
-    session_start()
+    session_start();
+
+
 ?>
 
 
 <?php
 
 include("database/configDatabase.php");
-
-// Get image data from database
-$result = $con->query("SELECT image FROM images");
+    if(isset($_SESSION['userid']) && !empty($_SESSION['userid'])) {
+          echo " session  is available, Welcome $_SESSION[userid] ";
+          } else {
+          echo " No Session , Please Login ";
+          exit;
+      }
+    $result = $con->query("SELECT image FROM images WHERE id =24");
 ?>
 
 
@@ -32,6 +38,7 @@ $result = $con->query("SELECT image FROM images");
 <div id="gallery-content">
   <?php if($result->num_rows > 0){ ?>
   <div class="gallery" style= "width: 50%; margin: 20px auto; border: 1px solid #cbcbcb;">
+
       <?php while($row = $result->fetch_assoc()){ ?>
            <div id='gallery-img_div'>
         	 <img class="gallery-img" src="data:image/jpg charset=utf8; base64,<?php echo base64_encode($row['image']) ?>" />
