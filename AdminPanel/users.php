@@ -24,22 +24,30 @@
 <div id="gallery-content">
   <div class="gallery" style= "width: 80%; margin: 20px auto; border: 1px solid #cbcbcb; padding: 50px">
 
-    <p>
-        <select style="margin-bottom: 5px"; id="select1">
-        <?php while($row = $result->fetch_assoc()){ ?>
-        <option value="<?php echo $row['id'] ?>"><?php echo $row['firstName']; echo "   "; echo $row['lastName'] ?> </option>
-        <?php } ?> </select>
-     </p>
+      <form action="delete.php" method="post">
+      <p>
+         <select name="userSelect"; style="margin-bottom: 5px"; id="select1">
+           <?php while($row = $result->fetch_assoc()){ ?>
+            <option value="<?php echo $row['id'] ?>"><?php echo $row['firstName']; echo "   "; echo $row['lastName'] ?> </option>
+           <?php } ?> </select>
+          <input type="submit" name="submit" value="Get Selected Values" />
+         </p>
+       <p style="margin-bottom: 5px";> The value of the option selected is: <span class="output"></span> </p>
 
-    <p style="margin-bottom: 5px";> The value of the option selected is: <span class="output"></span> </p>
-    <button onclick="getOption()"> Check option </button>
-    <button onclick="getOption()"> Check option </button>
-  </div>
-
-  <form class="gallery-form" method="POST" action="" enctype="multipart/form-data">
-  		<button type="submit" name="submit">POST</button>
-  </form>
+            <button name="deleteBtnTapped" onclick="getOption()" class="registerbtn">წაშლა</button>
+            <button name="updateBtnTapped" onclick="getOption()" class="registerbtn">განახლება</button>
+       </form>
+   </div>
 </div>
+
+           <!-- /* get userid from choosen user */ -->
+           <?php
+             if(isset($_POST['deleteBtnTapped']) || isset($_POST['submit'])){
+             $selected_val = $_POST['userSelect'];  // Storing Selected Value In Variable
+             echo "You have selected : $selected_val";  // Displaying Selected Value
+             $_SESSION['selectedid'] = $_POST['userSelect'];
+             }
+             ?>
 
     <script type="text/javascript">
         function getOption() {

@@ -1,3 +1,6 @@
+
+<!-- /* make one header, which is similar to others page */ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

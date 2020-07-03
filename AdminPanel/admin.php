@@ -1,6 +1,6 @@
 <?php
     session_start();
-include("../database/configDatabase.php");
+    include("../database/configDatabase.php");
     if(isset($_SESSION['isAdmin']) && isset($_SESSION['userid']) && !empty($_SESSION['userid'])) {
           if($_SESSION['isAdmin'] == 1) {
           echo " session  is available, Welcome $_SESSION[userid] ";
@@ -8,8 +8,7 @@ include("../database/configDatabase.php");
           echo " თქვენ არ გაქვთ ადმინის უფლება";
           exit;
       }
-      }
-//     $result = $con->query("SELECT image FROM images WHERE uid=$_SESSION[userid]");
+    }
 ?>
 
 
