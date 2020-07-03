@@ -26,19 +26,27 @@ include("database/configDatabase.php");
     <div class="abouts-form">
       <form action="#" method="post">
           <p>
-             <select name="userSelect"; onChange="myNewFunction(this.selectedIndex);"  style="margin-bottom: 5px"; id="select1">
+             <select style="margin-bottom: 5px">
                <?php while($row = $result->fetch_assoc()){ ?>
                 <option value="<?php echo $row['id']?>"><?php echo $row['firstName']; echo "   "; echo $row['lastName'] ?> </option>
                <?php } ?> </select>
              </p>
                 <button name="deleteBtnTapped" class="registerbtn">წაშლა</button>
+                <p style="margin-bottom: 5px;">აირჩიე რისი შეცვლა გინდა:</p>
+                  <select name="updatesSelect">
+                      <option value="email">email</option>
+                      <option value="password">password</option>
+                      <option value="firstName">firstName</option>
+                      <option value="lastName">lastName</option>
+                  </select>
+                    <input type = "Text" value ="username" name = "username">
                 <button name="updateBtnTapped" class="registerbtn">განახლება</button>
       </form>
     </div>
 
 
     <table class="about-table">
-        <tr>
+        <tr style="margin: 20px;">
         <th>Id</th>
         <th>Email</th>
         <th>Password</th>
@@ -61,5 +69,34 @@ include("database/configDatabase.php");
     </table>
 
 
+           <?php
+             if(isset($_POST['deleteBtnTapped'])){
+                $sql = "DELETE FROM users WHERE id=$_SESSION[userid]";
+                $result1= mysqli_query($con,$sql);
+
+               if($result1){
+                 include("Auth/logOut.php");
+                 } else {
+                  	echo "can not delete";
+                }
+                $con->close();
+             }
+             ?>
+
+
+             <?php
+               if(isset($_POST['updateBtnTapped'])){
+                $updatesItem = $_POST['updatesSelect'];
+                $username = $_POST['username'];
+                $sql = "UPDATE users SET $updatesItem='$username' WHERE id=$_SESSION[userid]";
+
+                if ($con->query($sql) === TRUE) {
+                  echo "Record updated successfully";
+                } else {
+                  echo "Error updating record: " . $con->error;
+                }
+                $con->close();
+               }
+             ?>
   </body>
 </html>
