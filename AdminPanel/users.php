@@ -1,46 +1,52 @@
 <?php
     session_start();
     include("../database/configDatabase.php");
+    if(isset($_SESSION['userid']) && !empty($_SESSION['userid'])) {
+          echo " session  is available, Welcome $_SESSION[userid] ";
+          } else {
+          echo "შენს შესახებ დეტალების სანახავად გაიარეთ ავტორიზაცია ან რეგისტრაცია";
+          exit;
+      }
     $result = $con->query("SELECT * FROM users");
 ?>
-
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css" />
-    <title>გალერეა</title>
+    <title>ჩემს შესახებ</title>
     <meta name="author" content="რეზო ჯოგლიძე">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-
 <body>
- <header class="header">
-     <h1> <p>იუზერები</p> </h1>
- </header>
 
-<div id="gallery-content">
-  <div class="gallery">
+    <div class="abouts-form">
+      <form action="#" method="post">
+          <p class="about-p">აირჩიე იუზერი, რომლის წაშლა ან რომელიმე ველის განახლება გსურს.</p>
+          <p>
+             <select name="allUsersSelect" style="margin-bottom: 5px">
+               <?php while($row = $result->fetch_assoc()){ ?>
+                <option value="<?php echo $row['id']?>"><?php echo $row['id']; echo " "; echo $row['firstName']; echo " "; echo $row['lastName'] ?> </option>
+               <?php } ?> </select>
+             </p>
+                <button name="deleteBtnTapped" class="registerbtn">წაშლა</button>
+                <p class="about-p">აირჩიე რისი შეცვლა გინდა:</p>
+                  <select name="updatesSelect">
+                      <option value="email">email</option>
+                      <option value="password">password</option>
+                      <option value="firstName">firstName</option>
+                      <option value="lastName">lastName</option>
+                  </select>
+                    <input type = "Text" name="inputTextField" placeholder = "შეიყვანეთ ტექსტი">
+                <button name="updateBtnTapped" class="registerbtn">განახლება</button>
+      </form>
+    </div>
 
-      <form action="delete.php" method="post">
-      <p>
-         <select name="userSelect"; onChange="myNewFunction(this.selectedIndex);"  style="margin-bottom: 5px"; id="select1">
-           <?php while($row = $result->fetch_assoc()){ ?>
-            <option value="<?php echo $row['id']?>"><?php echo $row['firstName']; echo "   "; echo $row['lastName'] ?> </option>
-           <?php } ?> </select>
-         </p>
-            <button name="deleteBtnTapped" class="registerbtn">წაშლა</button>
-            <button name="updateBtnTapped" class="registerbtn">განახლება</button>
-       </form>
-   </div>
-</div>
 
-
-<p class="users-p"> ყველა იუზერი </p>
-<table class="about-table">
-        <tr>
+    <table class="about-table">
+        <tr style="margin: 20px;">
         <th>Id</th>
         <th>Email</th>
         <th>Password</th>
@@ -50,15 +56,8 @@
 
         </tr>
             <?php
-            $conn = mysqli_connect("localhost", "root", "", "webProject");
-            // Check connection
-              if ($con->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-              }
-                  $result = $con->query("SELECT * FROM users");
-
+                $result = $con->query("SELECT * FROM users");
                 if ($result->num_rows > 0) {
-
                  // output data of each row
                       while($row = $result->fetch_assoc()) {
                 echo "<tr><td>" . $row["id"]. "</td><td>" . $row["email"] . "</td><td>"
@@ -66,31 +65,42 @@
                 }
                 echo "</table>";
               } else { echo "0 results"; }
-            $conn->close();
            ?>
     </table>
 
 
-           <!-- /* get userid from choosen user */ -->
            <?php
              if(isset($_POST['deleteBtnTapped'])){
-             echo "shignit";
-             $selected_val = $_POST['userSelect'];
-             echo $selected_val;
-             $_SESSION['selecteduserid'] = $_POST['userSelect'];
-             echo $_SESSION['selecteduserid'];
+                $selectedUserId = $_POST['allUsersSelect'];
+                $sql = "DELETE FROM users WHERE id=$selectedUserId";
+                $result1= mysqli_query($con,$sql);
+
+               if($con->query($sql) === TRUE){
+                 include("../Auth/logOut.php");
+                 } else {
+                  	echo "can not delete";
+                }
+                $con->close();
              }
+           ?>
+
+
+             <?php
+               if(isset($_POST['updateBtnTapped']) && isset($_POST['inputTextField'])){
+                $selectedUserField = $_POST['updatesSelect'];
+                $inputTxtValue = $_POST['inputTextField'];
+                $selectedUserId = $_POST['allUsersSelect'];
+                if(!empty($_POST['inputTextField'])){
+                $sql = "UPDATE users SET $selectedUserField='$inputTxtValue' WHERE id=$selectedUserId";
+                   if ($con->query($sql) === TRUE) {
+                        echo "წარმატებით განახლდა";
+                    } else {
+                      echo "პრობლემა განახლებისას: " . $con->error;
+                    }
+                } else {
+                echo "textField არ უნდა იყოს ცარიელი!";
+                }
+               }
              ?>
-
-    <script type="text/javascript">
-
-         function getUserDetails() {
-            selectElement = document.querySelector('#select1');
-            output = selectElement.value;
-            fullName = document.getElementById("select1");
-            document.querySelector('.id').textContent = output;
-            document.querySelector('.fullName').textContent = fullName.options[fullName.selectedIndex].text;
-        }
-    </script>
-</body>
+  </body>
 </html>

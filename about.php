@@ -32,14 +32,14 @@ include("database/configDatabase.php");
                <?php } ?> </select>
              </p>
                 <button name="deleteBtnTapped" class="registerbtn">წაშლა</button>
-                <p style="margin-bottom: 5px;">აირჩიე რისი შეცვლა გინდა:</p>
+                <p class="about-p">აირჩიე რისი შეცვლა გინდა:</p>
                   <select name="updatesSelect">
                       <option value="email">email</option>
                       <option value="password">password</option>
                       <option value="firstName">firstName</option>
                       <option value="lastName">lastName</option>
                   </select>
-                    <input type = "Text" value ="username" name = "username">
+                    <input type = "Text" placeholder = "შეიყვანეთ ტექსტი">
                 <button name="updateBtnTapped" class="registerbtn">განახლება</button>
       </form>
     </div>
