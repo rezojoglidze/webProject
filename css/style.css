@@ -515,6 +515,7 @@ hr {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    border-radius: 25px;
 }
 
 .registerbtn:hover {
@@ -556,8 +557,33 @@ hr {
     cursor: pointer;
     border-radius: 12px;
 }
+.gallery{
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #cbcbcb;
+    padding: 50px;
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #cbcbcb;
+    padding: 50px
+}
 
 #gallery-content{
+    width: 50%;
+    margin: 40px auto;
+    border: 3px solid #cbcbcb;
+    box-shadow: rgba(0, 0, 0, 0.75) 5px 5px 5px 0px;
+}
+
+.abouts-form{
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #cbcbcb;
+    padding: 50px;
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #cbcbcb;
+    padding: 50px;
     width: 50%;
     margin: 40px auto;
     border: 3px solid #cbcbcb;
@@ -601,4 +627,32 @@ hr {
 
 #admin-selected{
    margin-bottom: 100px;
+}
+
+.about-h1 {
+   font-size: 60px;
+    background-color: #3D58A6;
+}
+
+.about-table {
+    border-collapse: collapse;
+    width: 70%;
+    color: #588c7e;
+    font-family: monospace;
+    font-size: 25px;
+    text-align: left;
+    margin: 30px;
+    margin-top: 10px;
+}
+
+th {
+    background-color: #588c7e;
+    color: white;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2}
+
+.users-p {
+    margin-left: 30px;
+    font-size: 22px;
 }

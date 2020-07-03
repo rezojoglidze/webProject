@@ -22,11 +22,7 @@
  </header>
 
 <div id="gallery-content">
-  <div class="gallery" style= "width: 80%; margin: 20px auto; border: 1px solid #cbcbcb; padding: 50px">
-
- <form>
-     <button style="border-radius: 25px" onclick="getUserDetails()" class="registerbtn">იუზერის დეტალები</button>
-</form>
+  <div class="gallery">
 
       <form action="delete.php" method="post">
       <p>
@@ -35,20 +31,54 @@
             <option value="<?php echo $row['id']?>"><?php echo $row['firstName']; echo "   "; echo $row['lastName'] ?> </option>
            <?php } ?> </select>
          </p>
-               <p style="margin-bottom: 5px";> მომხარებლის id: <span class="id"></span> </p>
-               <p style="margin-bottom: 5px";> სახელი და გვარი: <span class="fullName"></span> </p>
-            <button style="border-radius: 25px" name="deleteBtnTapped" class="registerbtn">წაშლა</button>
-            <button style="border-radius: 25px" name="updateBtnTapped" class="registerbtn">განახლება</button>
+            <button name="deleteBtnTapped" class="registerbtn">წაშლა</button>
+            <button name="updateBtnTapped" class="registerbtn">განახლება</button>
        </form>
    </div>
 </div>
 
+
+<p class="users-p"> ყველა იუზერი </p>
+<table class="about-table">
+        <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>isAdmin</th>
+
+        </tr>
+            <?php
+            $conn = mysqli_connect("localhost", "root", "", "webProject");
+            // Check connection
+              if ($con->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+              }
+                  $result = $con->query("SELECT * FROM users");
+
+                if ($result->num_rows > 0) {
+
+                 // output data of each row
+                      while($row = $result->fetch_assoc()) {
+                echo "<tr><td>" . $row["id"]. "</td><td>" . $row["email"] . "</td><td>"
+                . $row["password"]. "</td><td>" . $row["firstName"]. "</td><td>" . $row["lastName"]. "</td><td>" . $row["isAdmin"]. "</td></tr>";
+                }
+                echo "</table>";
+              } else { echo "0 results"; }
+            $conn->close();
+           ?>
+    </table>
+
+
            <!-- /* get userid from choosen user */ -->
            <?php
              if(isset($_POST['deleteBtnTapped'])){
+             echo "shignit";
              $selected_val = $_POST['userSelect'];
-             echo "You have selected : $selected_val";
-             $_SESSION['selectedid'] = $_POST['userSelect'];
+             echo $selected_val;
+             $_SESSION['selecteduserid'] = $_POST['userSelect'];
+             echo $_SESSION['selecteduserid'];
              }
              ?>
 

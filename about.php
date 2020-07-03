@@ -1,65 +1,65 @@
 <?php
-    session_start()
+    session_start();
+include("database/configDatabase.php");
+    if(isset($_SESSION['userid']) && !empty($_SESSION['userid'])) {
+          echo " session  is available, Welcome $_SESSION[userid] ";
+          } else {
+          echo "შენს შესახებ დეტალების სანახავად გაიარეთ ავტორიზაცია ან რეგისტრაცია";
+          exit;
+      }
+    $result = $con->query("SELECT * FROM users WHERE id=$_SESSION[userid]");
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <title>შესახებ</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>ჩემს შესახებ</title>
     <meta name="author" content="რეზო ჯოგლიძე">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-
 <body>
-<?php include("header/header.php"); ?>
+    <?php include("header/header.php"); ?>
 
-<div class="content" id="content"> </div>
-    <section>
-        <div>
-            <iframe class="map-block" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.136096887863!2d44.78282485047135!3d41.71758198332214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404472d4fa5b02d7%3A0xced15c2c7992ceb5!2sGeoLab!5e0!3m2!1sen!2sge!4v1544182328441" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-</section>
-<section class="contact-session">
-    <h2 class="contact">საკონტაკტო ინფორმაცია</h2>
-    <ol>
-        <li class="about-li-tag">
-            <span>მისამართი</span>
-            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.136096887863!2d44.78282485047135!3d41.71758198332214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404472d4fa5b02d7%3A0xced15c2c7992ceb5!2sGeoLab!5e0!3m2!1sen!2sge!4v1544182328441" target="_blanck">10 მერაბ ალექსიძის ქუჩა, თბილისი 0193</a>
-        </li>
-        <li class="about-li-tag">
-            <span>ტელეფონის ნომერი</span>
-            <a>555 69 43 48</a>
-        </li>
-        <li class="about-li-tag">
-            სამუშაო საათები: 9:00-დან 20:00-მდე
-        </li>
-    </ol>
-</section>
+    <div class="abouts-form">
+      <form action="#" method="post">
+          <p>
+             <select name="userSelect"; onChange="myNewFunction(this.selectedIndex);"  style="margin-bottom: 5px"; id="select1">
+               <?php while($row = $result->fetch_assoc()){ ?>
+                <option value="<?php echo $row['id']?>"><?php echo $row['firstName']; echo "   "; echo $row['lastName'] ?> </option>
+               <?php } ?> </select>
+             </p>
+                <button name="deleteBtnTapped" class="registerbtn">წაშლა</button>
+                <button name="updateBtnTapped" class="registerbtn">განახლება</button>
+      </form>
+    </div>
 
 
-<footer class="socialIcons">
-    <a href="http://www.facebook.com" >
-        <img class=social-fb src="img/facebook-logo.svg" alt="facebook-logo isn't responding">
-    </a>
-    <a href="http://www.youtube.com">
-        <img class=social-yt src="img/youtube-logo.svg" alt="not responding">
-    </a>
-</footer>
+    <table class="about-table">
+        <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>isAdmin</th>
+
+        </tr>
+            <?php
+                $result = $con->query("SELECT * FROM users WHERE id=$_SESSION[userid]");
+                if ($result->num_rows > 0) {
+                 // output data of each row
+                      while($row = $result->fetch_assoc()) {
+                echo "<tr><td>" . $row["id"]. "</td><td>" . $row["email"] . "</td><td>"
+                . $row["password"]. "</td><td>" . $row["firstName"]. "</td><td>" . $row["lastName"]. "</td><td>" . $row["isAdmin"]. "</td></tr>";
+                }
+                echo "</table>";
+              } else { echo "0 results"; }
+           ?>
+    </table>
 
 
-<script>
-    let element = document.createElement('h1');
-    element.style.color = "green";
-    element.style.fontSize = "14px";
-    element.style.fontFamily = "Arial, Helvetica, sans-serif";
-    element.style.fontWeight = "normal";
-    element.style.margin = "30px";
-    element.innerText = "H1 Created from javascript";
-    document.getElementById("content").appendChild(element);
-</script>
-</body>
+  </body>
 </html>
