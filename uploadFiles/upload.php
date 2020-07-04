@@ -20,7 +20,7 @@ session_start();
             $allowTypes = array('jpg','png','jpeg','gif');
             if(in_array($fileType, $allowTypes)){
 
-            $image = $_FILES['image']['tmp_name'];
+            $image = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
             $imgContent = addslashes(file_get_contents($_FILES['image']['tmp_name']));
             $image_text = $_POST['image_text'];
 
