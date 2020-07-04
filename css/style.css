@@ -662,3 +662,9 @@ tr:nth-child(even) {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.about-textView {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}

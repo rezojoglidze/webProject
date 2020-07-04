@@ -1,0 +1,31 @@
+Id: 1559792490
+Email: 1
+Password: 1
+FirstName: ნიკა
+LastName: გიორგაძე
+isAdmin: 0
+
+
+Id: 1559792492
+Email: rezojoglidze7@gmail.com
+Password: 1234567
+FirstName: რეზო
+LastName: ჯოგლიძე
+isAdmin: 0
+
+
+Id: 1559792500
+Email: jemaltadumadze@gmail.com
+Password: mariam123
+FirstName: ჯემალ
+LastName: თადუმაძე
+isAdmin: 1
+
+Id: 1559792491
+Email: papaskiri_aleko@yahoo.com
+Password: paroli
+FirstName: ალეკო
+LastName: პაპასკირი
+isAdmin: 0
+
+

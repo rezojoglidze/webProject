@@ -24,7 +24,7 @@
 
     <div class="abouts-form">
       <form action="#" method="post">
-          <p class="about-p">აირჩიე იუზერი, რომლის წაშლა ან რომელიმე ველის განახლება გსურს.</p>
+          <p class="about-textView">აირჩიე იუზერი, რომლის წაშლა ან რომელიმე ველის განახლება გსურს.</p>
           <p>
              <select name="allUsersSelect" style="margin-bottom: 5px">
                <?php while($row = $result->fetch_assoc()){ ?>
@@ -41,6 +41,7 @@
                   </select>
                     <input type = "Text" name="inputTextField" placeholder = "შეიყვანეთ ტექსტი">
                 <button name="updateBtnTapped" class="registerbtn">განახლება</button>
+                <button name="downloadFileBtnTapped" class="registerbtn">ჩამოწერე ფაილში</button>
       </form>
     </div>
 
@@ -101,6 +102,29 @@
                 echo "textField არ უნდა იყოს ცარიელი!";
                 }
                }
+             ?>
+
+
+             <?php
+              if(isset($_POST['downloadFileBtnTapped'])){
+               $selectedUserId = $_POST['allUsersSelect'];
+               $result = $con->query("SELECT * FROM users WHERE id=$selectedUserId");
+               if($row = $result->fetch_assoc()) {
+                 $fp = fopen('file.txt', 'a');//opens file in append mode
+                 fwrite($fp,'Id: ' .$row["id"].PHP_EOL);
+                 fwrite($fp,'Email: ' .$row["email"].PHP_EOL);
+                 fwrite($fp,'Password: ' .$row["password"].PHP_EOL);
+                 fwrite($fp,'FirstName: ' .$row["firstName"].PHP_EOL);
+                 fwrite($fp,'LastName: ' .$row["lastName"].PHP_EOL);
+                 fwrite($fp,'isAdmin: ' .$row["isAdmin"].PHP_EOL);
+
+                 fwrite($fp,''.PHP_EOL);
+                 fwrite($fp,''.PHP_EOL);
+                 fclose($fp);
+
+                 echo "File appended successfully";
+                }
+              }
              ?>
   </body>
 </html>
