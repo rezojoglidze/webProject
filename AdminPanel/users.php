@@ -2,7 +2,7 @@
     session_start();
     include("../database/configDatabase.php");
     if(isset($_SESSION['userid']) && !empty($_SESSION['userid'])) {
-          echo " session  is available, Welcome $_SESSION[userid] ";
+//           echo " session  is available, Welcome $_SESSION[userid] ";
           } else {
           echo "შენს შესახებ დეტალების სანახავად გაიარეთ ავტორიზაცია ან რეგისტრაცია";
           exit;
@@ -21,6 +21,14 @@
 </head>
 
 <body>
+<header class="header">
+     <a href="admin.php"> <button class="users-backButton" style="vertical-align:middle"><span>Admin</span></button> </a>
+   <div class="headers-auth-fields">
+     <form  action="../Auth/logOut.php" method="post">
+            <button class="logOut_btn" type="submit" name="logout-submit">გასვლა</button>
+     </form>
+   </div>
+</header>
 
     <div class="abouts-form">
       <form action="#" method="post">

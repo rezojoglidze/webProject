@@ -457,7 +457,7 @@ h2{
     alignment: right;
     text-align: right;
     margin-right: 20px;
-    margin-top: -70px;
+    margin-top: -60px;
     font-weight: bold;
 }
 
@@ -666,5 +666,45 @@ tr:nth-child(even) {
 .about-textView {
     margin-top: 10px;
     margin-bottom: 20px;
-    font-size: 25px;
+    font-size: 18px;
+    alignment: center;
+}
+
+.users-backButton {
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.users-backButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.users-backButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.users-backButton:hover span {
+    padding-right: 25px;
+}
+
+.users-backButton:hover span:after {
+    opacity: 1;
+    right: 0;
 }
