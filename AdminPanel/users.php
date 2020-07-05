@@ -68,9 +68,9 @@
                 $result = $con->query("SELECT * FROM users");
                 if ($result->num_rows > 0) {
                  // output data of each row
-                      while($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["id"]. "</td><td>" . $row["email"] . "</td><td>"
-                . $row["password"]. "</td><td>" . $row["firstName"]. "</td><td>" . $row["lastName"]. "</td><td>" . $row["isAdmin"]. "</td></tr>";
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr><td>" . $row["id"]. "</td><td>" . $row["email"] . "</td><td>"
+                    . $row["password"]. "</td><td>" . $row["firstName"]. "</td><td>" . $row["lastName"]. "</td><td>" . $row["isAdmin"]. "</td></tr>";
                 }
                 echo "</table>";
               } else { echo "0 results"; }
@@ -85,7 +85,7 @@
                 $result1= mysqli_query($con,$sql);
 
                if($con->query($sql) === TRUE){
-                 include("../Auth/logOut.php");
+                    echo "id: $selectedUserId successfully delete. reload page ";
                  } else {
                   	echo "can not delete";
                 }

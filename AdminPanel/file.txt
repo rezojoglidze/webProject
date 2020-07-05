@@ -45,3 +45,19 @@ LastName: კაკოვიჩი
 isAdmin: 1
 
 
+Id: 1559792490
+Email: 1
+Password: 1
+FirstName: ნიკა
+LastName: გიორგაძე
+isAdmin: 0
+
+
+Id: 1559792524
+Email: 2
+Password: 2
+FirstName: ნიკა2
+LastName: გიორგაძე2
+isAdmin: 0
+
+

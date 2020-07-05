@@ -569,7 +569,7 @@ hr {
 }
 
 #gallery-content{
-    width: 50%;
+    width: 80%;
     margin: 40px auto;
     border: 3px solid #cbcbcb;
     box-shadow: rgba(0, 0, 0, 0.75) 5px 5px 5px 0px;
@@ -591,7 +591,7 @@ hr {
 }
 
 .gallery-form{
-    width: 50%;
+    width: 70%;
     margin: 20px auto;
 }
 
@@ -615,8 +615,8 @@ hr {
 .gallery-img {
     float: left;
     margin: 5px;
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
 }
 
 .admin-p {

@@ -2,7 +2,7 @@
     session_start();
 include("database/configDatabase.php");
     if(isset($_SESSION['userid']) && !empty($_SESSION['userid'])) {
-          echo " session  is available, Welcome $_SESSION[userid] ";
+//           echo " session  is available, Welcome $_SESSION[userid] ";
           } else {
           echo "ფოტოების სანახავად გაიარეთ ავტორიზაცია ან რეგისტრაცია";
           exit;
