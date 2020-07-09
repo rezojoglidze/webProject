@@ -28,7 +28,7 @@ include("database/configDatabase.php");
 
 <div id="gallery-content">
   <?php if($result->num_rows > 0){ ?>
-  <div class="gallery" style= "width: 50%; margin: 20px auto; border: 1px solid #cbcbcb;">
+  <div class="gallery">
 
       <?php while($row = $result->fetch_assoc()){ ?>
            <div id='gallery-img_div'>
@@ -42,7 +42,7 @@ include("database/configDatabase.php");
   <?php } ?>
 
 
-  <form class="gallery-form" method="POST" action="uploadFiles/upload.php" enctype="multipart/form-data">
+  <form style="width: 50%;"class="gallery-form" method="POST" action="uploadFiles/upload.php" enctype="multipart/form-data">
   	<input type="hidden" name="size" value="1000000">
   	<div class="gallery-form-div">
   	  <input type="file" name="image">

@@ -39,7 +39,7 @@ include("database/configDatabase.php");
                       <option value="firstName">firstName</option>
                       <option value="lastName">lastName</option>
                   </select>
-                    <input type = "Text" placeholder = "შეიყვანეთ ტექსტი">
+                    <input type = "Text" placeholder = "შეიყვანეთ ტექსტი" name="inputTextField">
                 <button name="updateBtnTapped" class="registerbtn">განახლება</button>
       </form>
     </div>
@@ -83,15 +83,14 @@ include("database/configDatabase.php");
              }
              ?>
 
-
              <?php
                if(isset($_POST['updateBtnTapped'])){
                 $updatesItem = $_POST['updatesSelect'];
-                $username = $_POST['username'];
-                $sql = "UPDATE users SET $updatesItem='$username' WHERE id=$_SESSION[userid]";
+                $inputTxtValue = $_POST['inputTextField'];
+                $sql = "UPDATE users SET $updatesItem='$inputTxtValue' WHERE id=$_SESSION[userid]";
 
                 if ($con->query($sql) === TRUE) {
-                  echo "Record updated successfully";
+                  echo "წარმატებით განახდა! დაარეფრეშეთ გვერდი შედეგის სანახავად.";
                 } else {
                   echo "Error updating record: " . $con->error;
                 }

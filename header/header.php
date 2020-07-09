@@ -27,12 +27,12 @@
                                   </form>';
                        } else {
                               echo  '<ul>';
-                              echo  '<form  action="Auth/LogIn.html" method="post">
+                              echo  '<form  action="Auth/LogIn.php" method="post">
                                                  <button class="logOut_btn" type="submit" name="logIn-submit">შესვლა</button>
                                                  </form>';
                               echo    '<p class="logOut_slash" style="margin-right: 1px; margin-left: 1px"> / </p>';
 
-                              echo  '<form  action="Auth/Registration.html" method="post">
+                              echo  '<form  action="Auth/Registration.php" method="post">
                                      <button class="logOut_btn" type="submit" name="registracion-submit">რეგისტრაცია</button>
                                       </form>';
                               echo   '</ul>';

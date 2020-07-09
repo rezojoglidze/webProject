@@ -61,3 +61,19 @@ LastName: გიორგაძე2
 isAdmin: 0
 
 
+Id: 1559792524
+Email: 2
+Password: 2
+FirstName: ნიკა2
+LastName: გიორგაძე2
+isAdmin: 0
+
+
+Id: 1559792557
+Email: gaga123@gmail.com
+Password: gaga1212
+FirstName: გაგა
+LastName: chichkhishvili
+isAdmin: 0
+
+

@@ -85,9 +85,9 @@
                 $result1= mysqli_query($con,$sql);
 
                if($con->query($sql) === TRUE){
-                    echo "id: $selectedUserId successfully delete. reload page ";
+                    echo "id: $selectedUserId წარმატებით წაიშალა. განაახლეთ გვერდი!";
                  } else {
-                  	echo "can not delete";
+                  	echo "პრობლემა წაშლისას, სცადეთ მოგვიანებით.";
                 }
                 $con->close();
              }
@@ -102,7 +102,7 @@
                 if(!empty($_POST['inputTextField'])){
                 $sql = "UPDATE users SET $selectedUserField='$inputTxtValue' WHERE id=$selectedUserId";
                    if ($con->query($sql) === TRUE) {
-                        echo "წარმატებით განახლდა";
+                         echo "წარმატებით განახდა! დაარეფრეშეთ გვერდი შედეგის სანახავად.";
                     } else {
                       echo "პრობლემა განახლებისას: " . $con->error;
                     }
@@ -130,7 +130,7 @@
                  fwrite($fp,''.PHP_EOL);
                  fclose($fp);
 
-                 echo "File appended successfully";
+                 echo "იუზერი დაემატა წარმატებით file.txt ფაილში.";
                 }
               }
              ?>

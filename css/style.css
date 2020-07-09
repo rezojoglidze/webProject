@@ -539,8 +539,6 @@ hr {
     border: none;
     color: white;
     padding: 13px;
-    padding-right: 20px;
-    padding-left: 20px;
     text-align: center;
     font-size: 15px;
     cursor: pointer;
@@ -562,13 +560,9 @@ hr {
     margin: 20px auto;
     border: 1px solid #cbcbcb;
     padding: 50px;
-    width: 80%;
-    margin: 20px auto;
-    border: 1px solid #cbcbcb;
-    padding: 50px
 }
 
-#gallery-content{
+#admin-headers-div{
     width: 80%;
     margin: 40px auto;
     border: 3px solid #cbcbcb;
@@ -590,8 +584,16 @@ hr {
     box-shadow: rgba(0, 0, 0, 0.75) 5px 5px 5px 0px;
 }
 
+
+#gallery-content{
+    width: 90%;
+    margin: 40px auto;
+    border: 3px solid #cbcbcb;
+    box-shadow: rgba(0, 0, 0, 0.75) 5px 5px 5px 0px;
+}
+
 .gallery-form{
-    width: 70%;
+    width: 50%;
     margin: 20px auto;
 }
 
@@ -600,9 +602,8 @@ hr {
 }
 
 #gallery-img_div{
-    width: 80%;
+    width: 90%;
     padding: 5px;
-    margin: 15px auto;
     border: 1px solid #cbcbcb;
 }
 
@@ -615,9 +616,10 @@ hr {
 .gallery-img {
     float: left;
     margin: 5px;
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
 }
+
 
 .admin-p {
     margin: 50px;
@@ -704,7 +706,28 @@ tr:nth-child(even) {
     padding-right: 25px;
 }
 
+#gallery-content{
+    width: 50%;
+    margin: 40px auto;
+    border: 3px solid #cbcbcb;
+    box-shadow: rgba(0, 0, 0, 0.75) 5px 5px 5px 0px;
+}
+
 .users-backButton:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+.admin-headers-div {
+    height: 50px;
+    width: 200px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    opacity: 0.8;
+    font-size:18px;
+    text-align: center;
+    padding: 16px;
+    font-size: 15px;
+    border-radius: 12px
 }
