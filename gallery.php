@@ -7,7 +7,7 @@ include("database/configDatabase.php");
           echo "ფოტოების სანახავად გაიარეთ ავტორიზაცია ან რეგისტრაცია";
           exit;
       }
-    $result = $con->query("SELECT * FROM images WHERE uid=$_SESSION[userid]");
+    $result = $con->query("SELECT * FROM images WHERE images.uid = $_SESSION[userid]");
 ?>
 
 

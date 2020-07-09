@@ -105,14 +105,14 @@
 
      $insert = $con->query("INSERT into users (email,password,firstName,lastName,isAdmin) VALUES ('$email', '$password','$firstName','$lastName','$isAdmin')");
 
-    if($insert) {
-    session_start();
-    $_SESSION['email'] = $_POST['email'];
-    header("Location: http://localhost:8080/webProject/index.php");
-    } else {
-    echo "something went wrong " . $con->mysqli_error;
-       }
-     $con->close();
+    if($insert && $insert1) {
+        session_start();
+        $_SESSION['email'] = $_POST['email'];
+        header("Location: http://localhost:8080/webProject/index.php");
+      } else {
+       echo "something went wrong " . $con->mysqli_error;
+      }
+    $con->close();
    }
 ?>
 </body>

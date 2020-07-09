@@ -45,9 +45,9 @@
             <ul class="Main-Font">
                 <li><a class="menu-a" href="index.php">მთავარი</a></li>
                 <li><a class="menu-a" href="news.php">სიახლეები</a></li>
-                <li><a class="menu-a" href="pantrionCompany.php">კომპანია</a></li>
                 <li><a class="menu-a" href="gallery.php">ფოტოები</a></li>
                 <li><a class="menu-a" href="about.php">შესახებ</a></li>
+                <li><a class="menu-a" href="multiple_table.php">ბაზები</a></li>
             </ul>
         </nav>
 </header>
