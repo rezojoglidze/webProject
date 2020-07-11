@@ -1,4 +1,6 @@
 <?php
+ session_start();
+
  $connect = mysqli_connect("localhost", "root", "", "webProject");
  $sql = "SELECT * FROM brand INNER JOIN product ON brand.brand_id = product.brand_id";
  $result = mysqli_query($connect, $sql);
