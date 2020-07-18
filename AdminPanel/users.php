@@ -2,12 +2,12 @@
     session_start();
     include("../database/configDatabase.php");
     if(isset($_SESSION['userid']) && !empty($_SESSION['userid'])) {
+                $result = $con->query("SELECT * FROM users");
 //           echo " session  is available, Welcome $_SESSION[userid] ";
           } else {
           echo "შენს შესახებ დეტალების სანახავად გაიარეთ ავტორიზაცია ან რეგისტრაცია";
           exit;
       }
-    $result = $con->query("SELECT * FROM users");
 ?>
 
 <!DOCTYPE html>

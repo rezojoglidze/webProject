@@ -32,7 +32,7 @@
 </header>
 
 
-        <nav style="margin-top: 50px;" class="Main-Font" class="admin-title-center ">
+        <nav style="margin-top: 70px; margin-left: 20px" class="Main-Font" class="admin-title-center ">
                 <li><a class="menu-a" href="users.php">იუზერები</a></li>
                 <li><a class="menu-a">ფოტოები</a></li>
         </nav>
