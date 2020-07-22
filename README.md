@@ -1,7 +1,7 @@
 # webProject
 
 
-<h2> XAMP-ში, კერძოდ, http://localhost:8080/phpmyadmin/-ში პროექტის შესაბამისი Database-ის query-ები. </h2>
+ XAMP-ში, კერძოდ, http://localhost:8080/phpmyadmin/-ში პროექტის შესაბამისი Database-ის query-ები.
 
 -- Database: `webProject`
 
